@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo CÉNIT | RedConecta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* VARIABLES DE IDENTIDAD CORPORATIVA DE REDCONECTA */
+        :root {
+            --azul-institucional: #002D62;
+            --azul-oscuro: #001B3D;
+            --turquesa-conexion: #008C95;
+            --turquesa-claro: #14AEB7;
+            --gris-claro: #F5F7FA;
+            --gris-medio: #D9E1E8;
+            --blanco: #FFFFFF;
+        }
+
+        /* Estilos Base y Reseteo */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--azul-oscuro);
+            color: var(--gris-claro);
+            overflow-x: hidden;
+            padding-top: 90px;
+        }
+
+        section {
+            padding: 80px 5%;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--blanco);
+        }
+
+        .section-title span {
+            color: var(--turquesa-conexion);
+        }
+
+        /* Bloque Introductorio */
+        .intro-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .intro-text {
+            flex: 1.2;
+        }
+
+        .intro-text h2 {
+            font-size: 28px;
+            color: var(--blanco);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .intro-text p {
+            font-size: 16px;
+            color: var(--gris-medio);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p.highlight {
+            font-size: 18px;
+            color: var(--blanco);
+            font-weight: 500;
+            border-left: 4px solid var(--turquesa-conexion);
+            padding-left: 15px;
+        }
+
+        .intro-visual {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cenit-sphere {
+            background: linear-gradient(135deg, var(--azul-institucional) 0%, var(--azul-oscuro) 100%);
+            border: 2px solid var(--turquesa-conexion);
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 40px rgba(0, 140, 149, 0.3);
+        }
+
+        .cenit-sphere span {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--blanco);
+            letter-spacing: 3px;
+        }
+
+        /* Características del Modelo */
+        .features-bg {
+            background-color: #00142E; /* Variante más oscura de tu azul principal */
+            width: 100%;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: var(--azul-institucional);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--turquesa-conexion);
+        }
+
+        .feature-card h3 {
+            color: var(--blanco);
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-card h3 i {
+            color: var(--turquesa-conexion);
+        }
+
+        .feature-card p {
+            color: var(--gris-medio);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Bloque de Resultados */
+        .resultados-box {
+            background: linear-gradient(135deg, var(--azul-institucional) 0%, var(--azul-oscuro) 100%);
+            border: 1px solid rgba(0, 140, 149, 0.2);
+            border-radius: 16px;
+            padding: 45px;
+            margin-top: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .resultados-box h3 {
+            font-size: 24px;
+            color: var(--blanco);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .resultados-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            list-style: none;
+        }
+
+        .resultados-list li {
+            color: var(--gris-claro);
+            font-size: 14px;
+            line-height: 1.6;
+            display: flex;
+            gap: 12px;
+            align-items: start;
+        }
+
+        .resultados-list li i {
+            color: var(--turquesa-conexion);
+            margin-top: 3px;
+        }
+
+        /* Llamado a la Acción (CTA) */
+        .cta-container {
+            text-align: center;
+            padding: 60px 5%;
+        }
+
+        .btn-primary {
+            background-color: var(--turquesa-conexion);
+            color: var(--blanco);
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 140, 149, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--turquesa-claro);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(20, 174, 183, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .intro-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .intro-text p.highlight {
+                border-left: none;
+                border-top: 3px solid var(--turquesa-conexion);
+                padding-left: 0;
+                padding-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header style="width: 100%; height: 90px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; left: 0; z-index: 1000; border-bottom: 3px solid var(--turquesa-conexion); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+        <div class="logo-container" style="display: flex; align-items: center; height: 100%;">
+            <img src="logo.png" alt="Logo RedConecta" style="height: 65px; width: auto; display: block; object-fit: contain;">
+        </div>
+
+        <nav style="display: flex; gap: 24px; align-items: center;">
+            <a href="index.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Home</a>
+            <a href="direccion.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Dirección Estratégica</a>
+            <a href="desarrollo.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Desarrollo Misional</a>
+            <a href="optimizacion.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Optimización Operativa</a>
+            <a href="comunidad.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Comunidad y Networking</a>
+        </nav>
+        
+        <a href="ruta.html" style="background-color: var(--turquesa-conexion); color: var(--blanco); border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 13px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0, 140, 149, 0.2);" onmouseover="this.style.backgroundColor='var(--turquesa-claro)'" onmouseout="this.style.backgroundColor='var(--turquesa-conexion)'">Agendar Consejería</a>
+    </header>
+
+    <section>
+        <h1 class="section-title">Nuestra Metodología: <span>Modelo CÉNIT</span></h1>
+        
+        <div class="intro-container">
+            <div class="intro-text">
+                <h2>Conectando sueños y experiencias</h2>
+                <p class="highlight">CÉNIT es una ruta metodológica de fortalecimiento, gestión y transformación, diseñada para acompañar a personas, equipos y organizaciones en sus procesos de cambio y crecimiento.</p>
+                <p>Nace de una convicción sencilla y profunda: todo ser humano y toda organización pueden avanzar, renovarse y alcanzar niveles más altos de desarrollo cuando cuentan con un camino claro que los oriente.</p>
+                <p>Más que un modelo teórico, CÉNIT es un recorrido práctico. Una guía estructurada que permite comprender lo que ocurre, ordenar lo que parece disperso, tomar mejores decisiones y convertirlas en acciones con propósito. Su esencia no está en imponer respuestas, sino en ayudar a encontrarlas; no en entregar fórmulas genéricas, sino en construir soluciones propias a partir de la realidad de cada contexto.</p>
+            </div>
+            <div class="intro-visual">
+                <div class="cenit-sphere">
+                    <i class="fa-solid fa-mountain" style="font-size: 40px; color: var(--turquesa-conexion); margin-bottom: 15px;"></i>
+                    <span>CÉNIT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="features-bg">
+        <section>
+            <h2 class="section-title">Un Enfoque <span>Flexible y Profundo</span></h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><i class="fa-solid fa-circle-nodes"></i>Sistema Integrado</h3>
+                    <p>Las dimensiones clave (Conciencia Ampliada, Trascender Sentido, Aclarar Visión, Propósito, Comprender, Discernimiento, Enfoque e Impacto) permiten que la ruta no sea una secuencia lineal, sino un sistema dinámico coherente.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fa-solid fa-arrows-spin"></i>Mejora Continua</h3>
+                    <p>La ruta puede reiniciarse o adaptarse en cualquier punto del recorrido, generando procesos de retroalimentación ágil, maduración constante y crecimiento sostenido en el tiempo.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fa-solid fa-compass-drafting"></i>Momentos de Quiebre</h3>
+                    <p>Pensado especialmente para situaciones de estancamiento, falta de claridad, crisis internas o necesidades de reinvención radical, actuando como brújula para pasar de la confusión a la definición.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section>
+        <div class="resultados-box">
+            <h3>Resultado global del proceso CÉNIT</h3>
+            <p style="text-align: center; color: var(--gris-medio); margin-bottom: 30px; font-size: 15px;">Al transitar de manera integral por los niveles del modelo, una organización o líder consolida capacidades para:</p>
+            
+            <ul class="resultados-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>Comprender la realidad institucional de manera profunda, sistémica y completamente objetiva.</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span>Tomar decisiones fundamentadas, estratégicas y libres de sesgos coyunturales.</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span>Organizar recursos, procesos internos y el talento de las personas hacia un mismo propósito común.</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span>Implementar acciones de alto valor que generen cambios perfectamente visibles y sostenibles.</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span>Construir visión, propósito y sentido trascendente que guíen con firmeza su crecimiento a futuro.</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta-container">
+        <h2 class="section-title" style="font-size: 28px;">¿Listo para recorrer el punto más alto de tu organización?</h2>
+        <p style="color: var(--gris-medio); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">La verdadera transformación es un camino, no un evento aislado. Pasemos juntos de la incertidumbre a la claridad estratégica.</p>
+        <a href="ruta.html" class="btn-primary">Iniciar la Ruta CÉNIT</a>
+    </section>
+
+    <footer style="background-color: #00142E; padding: 40px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 14px; color: var(--gris-medio);">
+        <p>&copy; 2026 RedConecta. Todos los derechos reservados. Consejería y Desarrollo Organizacional.</p>
+    </footer>
+
+</body>
+</html>

@@ -3,374 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liderazgo Transformador: Red de Maestros RedConecta</title>
+    <title>RedConecta | Consejería y Acompañamiento Organizacional</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="family">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Estilos Base y Reseteo */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
+        :root {
+            --azul-institucional: #002D62;
+            --azul-oscuro: #001B3D;
+            --turquesa-conexion: #008C95;
+            --turquesa-claro: #14AEB7;
+            --gris-claro: #F5F7FA;
+            --gris-medio: #D9E1E8;
+            --blanco: #FFFFFF;
         }
 
-        body {
-            background-color: #0F172A;
-            color: #F8FAFC;
-            overflow-x: hidden;
-            padding-top: 90px; /* Evita que el header fijo tape el contenido */
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--azul-oscuro); color: var(--gris-claro); overflow-x: hidden; padding-top: 90px; }
+        section { padding: 80px 5%; width: 100%; max-width: 1200px; margin: 0 auto; }
 
-        /* Secciones Genéricas */
-        section {
-            padding: 80px 5%;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .section-title { text-align: center; font-size: 38px; font-weight: 700; margin-bottom: 40px; color: var(--blanco); }
+        .section-title span { color: var(--turquesa-conexion); }
 
-        /* Estilos del Botón Global */
-        .btn-primary {
-            background-color: #0D9488;
-            color: #FFFFFF;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
-            border: none;
-            cursor: pointer;
-        }
+        .hero-section { min-height: calc(100vh - 90px); display: flex; align-items: center; justify-content: space-between; gap: 50px; padding: 40px 5%; }
+        .hero-content { flex: 1.2; }
+        .hero-tag { color: var(--turquesa-conexion); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; display: block; }
+        .hero-content h1 { font-size: 46px; font-weight: 800; color: var(--blanco); line-height: 1.2; margin-bottom: 25px; }
+        .hero-content p { font-size: 16px; color: var(--gris-medio); line-height: 1.8; margin-bottom: 35px; }
+        
+        .btn-primary { background-color: var(--turquesa-conexion); color: var(--blanco); padding: 16px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 140, 149, 0.3); display: inline-block; }
+        .btn-primary:hover { background-color: var(--turquesa-claro); transform: translateY(-2px); }
 
-        .btn-primary:hover {
-            background-color: #0F766E;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
-        }
+        .cap-card { background-color: var(--azul-institucional); padding: 40px; border-radius: 12px; border-top: 5px solid var(--turquesa-conexion); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .cap-card i { font-size: 36px; color: var(--turquesa-conexion); margin-bottom: 20px; }
+        .cap-card h2 { color: var(--blanco); font-size: 28px; margin-bottom: 20px; }
+        .cap-card p { color: var(--gris-medio); font-size: 16px; margin-bottom: 25px; line-height: 1.7; }
 
-        /* 1. Sección de Inicio (Hero) */
-        .hero-section {
-            min-height: calc(100vh - 90px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .hero-content h1 {
-            font-size: 42px;
-            font-weight: 800;
-            line-height: 1.2;
-            color: #FFFFFF;
-            margin-bottom: 20px;
-        }
-
-        .hero-content h1 span {
-            color: #0D9488;
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            color: #94A3B8;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .hero-image-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Marcador de posición estilizado para la gráfica o contenido del Hero */
-        .hero-mockup {
-            width: 100%;
-            max-width: 450px;
-            height: 350px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-            border: 1px solid rgba(13, 148, 136, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        /* 2. Sección Modelo CÉNIT */
-        .cenit-section {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 50px;
-            color: #FFFFFF;
-        }
-
-        .section-title span {
-            color: #0D9488;
-        }
-
-        .cenit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .cenit-card {
-            background-color: #1E293B;
-            padding: 30px;
-            border-radius: 12px;
-            border-bottom: 4px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .cenit-card:hover {
-            transform: translateY(-5px);
-            border-bottom-color: #0D9488;
-        }
-
-        .cenit-card i {
-            font-size: 32px;
-            color: #0D9488;
-            margin-bottom: 20px;
-        }
-
-        .cenit-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #FFFFFF;
-        }
-
-        .cenit-card p {
-            color: #94A3B8;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* 3. Sección Capacidades */
-        .capacidades-section {
-            background-color: #0B111E;
-            width: 100%;
-            max-width: 100% !important;
-        }
-
-        .capacidades-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .capacidades-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
-        .cap-card {
-            background-color: #1E293B;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #0D9488;
-        }
-
-        .cap-card h4 {
-            color: #FFFFFF;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .cap-card p {
-            color: #94A3B8;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        /* 4. Sección Contacto */
-        .contacto-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .form-container {
-            background-color: #1E293B;
-            padding: 40px;
-            border-radius: 16px;
-            width: 100%;
-            max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #E2E8F0;
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background-color: #0F172A;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            color: #FFFFFF;
-            font-size: 15px;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: #0D9488;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 40px;
-            }
-            .hero-content h1 {
-                font-size: 32px;
-            }
-            header nav {
-                display: none !important; /* Escondido en móviles temporalmente */
-            }
-        }
+        .cenit-box { background: linear-gradient(135deg, var(--azul-institucional) 0%, var(--azul-oscuro) 100%); border: 1px solid rgba(0, 140, 149, 0.2); border-radius: 20px; padding: 50px; display: flex; align-items: center; gap: 50px; margin-top: 20px; }
+        .cenit-badge { background-color: var(--azul-oscuro); border: 2px solid var(--turquesa-conexion); width: 180px; height: 180px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        
+        @media (max-width: 992px) { .hero-section, .cenit-box { flex-direction: column; text-align: center; } }
     </style>
 </head>
 <body>
 
-    <header style="width: 100%; height: 90px; background-color: #FFFFFF; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; left: 0; z-index: 1000; border-bottom: 3px solid #0D9488; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
-        <div class="logo-container" style="display: flex; align-items: center; height: 100%;">
-            <img src="logo.png" alt="Logo RedConecta" style="height: 65px; width: auto; display: block; object-fit: contain;">
-        </div>
-
-        <nav style="display: flex; gap: 35px; align-items: center;">
-            <a href="#" style="color: #0F172A; text-decoration: none; font-weight: 600; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#0D9488'" onmouseout="this.style.color='#0F172A'">Inicio</a>
-            <a href="#modelo-cenit" style="color: #0F172A; text-decoration: none; font-weight: 600; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#0D9488'" onmouseout="this.style.color='#0F172A'">Modelo CÉNIT</a>
-            <a href="#capacidades" style="color: #0F172A; text-decoration: none; font-weight: 600; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#0D9488'" onmouseout="this.style.color='#0F172A'">Capacidades</a>
-            <a href="#contacto" style="color: #0F172A; text-decoration: none; font-weight: 600; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#0D9488'" onmouseout="this.style.color='#0F172A'">Contacto</a>
+    <header style="width: 100%; height: 90px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; left: 0; z-index: 1000; border-bottom: 3px solid var(--turquesa-conexion);">
+        <div class="logo-container"><img src="logo.png" alt="Logo" style="height: 65px;"></div>
+        <nav style="display: flex; gap: 24px;">
+            <a href="index.html" style="color: var(--turquesa-conexion); font-weight: 700; text-decoration: none;">Home</a>
+            <a href="direccion.html" style="color: var(--azul-oscuro); text-decoration: none;">Dirección</a>
+            <a href="desarrollo.html" style="color: var(--azul-oscuro); text-decoration: none;">Desarrollo</a>
+            <a href="optimizacion.html" style="color: var(--azul-oscuro); text-decoration: none;">Optimización</a>
+            <a href="comunidad.html" style="color: var(--azul-oscuro); text-decoration: none;">Comunidad</a>
         </nav>
-        
-        <a href="#contacto" style="background-color: #0D9488; color: #FFFFFF; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 14px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(13, 148, 136, 0.2);">Agendar Consejería</a>
+        <a href="ruta.html" class="btn-primary" style="padding: 12px 20px;">Agendar Consejería</a>
     </header>
 
     <section class="hero-section">
         <div class="hero-content">
-            <h1>Comunidad de Profesionales del Sector Educativo en <span>RedConecta</span></h1>
-            <p>Un espacio diseñado para conectar tus fortalezas pedagógicas con las necesidades estratégicas de las instituciones educativas. Transformamos la gestión escolar mediante la colaboración colectiva, la investigación analítica y la optimización de procesos académicos.</p>
-            <a href="#contacto" class="btn-primary">Unirse a la Red de Maestros</a>
+            <span class="hero-tag">🏛️ Manifiesto e Identidad</span>
+            <h1>Gestión con Visión y <span>Liderazgo de Impacto</span></h1>
+            <p>RedConecta es una organización de consejería y acompañamiento organizacional que ayuda a las instituciones a fortalecer su gestión, optimizar sus operaciones y construir comunidades de crecimiento sostenibles.</p>
+            <a href="ruta.html" class="btn-primary">Diseñemos tu Ruta</a>
         </div>
-        <div class="hero-image-container">
-            <div class="hero-mockup">
-                <i class="fa-solid fa-network-wired" style="font-size: 80px; color: rgba(13, 148, 136, 0.4);"></i>
+    </section>
+
+    <section id="direccion" style="padding-bottom: 0;">
+        <div class="cap-card" style="max-width: 800px; margin: 0 auto;">
+            <i class="fa-solid fa-compass"></i>
+            <h2>Dirección Estratégica</h2>
+            <p>Consolidación de estructuras de gobierno, planes estratégicos (PMI) y diagnóstico operativo profundo para asegurar la coherencia institucional.</p>
+            <a href="direccion.html" class="btn-primary">Ver Detalles</a>
+        </div>
+    </section>
+
+    <section id="desarrollo" style="padding-bottom: 0;">
+        <div class="cap-card" style="max-width: 800px; margin: 0 auto;">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h2>Desarrollo Misional</h2>
+            <p>Acompañamos el núcleo operativo de valor. En educación: gestión del aprendizaje y convivencia; en empresas: gestión del conocimiento y cultura.</p>
+            <a href="desarrollo.html" class="btn-primary">Ver Servicios</a>
+        </div>
+    </section>
+
+    <section id="optimizacion" style="padding-bottom: 0;">
+        <div class="cap-card" style="max-width: 800px; margin: 0 auto;">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h2>Optimización Operativa</h2>
+            <p>Soluciones digitales a medida (Diseño Web, SIGED, SGTH) bajo un enfoque low-cost de alta productividad para maximizar resultados.</p>
+            <a href="optimizacion.html" class="btn-primary">Explorar Herramientas</a>
+        </div>
+    </section>
+
+    <section id="comunidad">
+        <div class="cap-card" style="max-width: 800px; margin: 0 auto;">
+            <i class="fa-solid fa-users-viewfinder"></i>
+            <h2>Comunidad y Networking</h2>
+            <p>Conectamos organizaciones y líderes para promover el aprendizaje compartido y alianzas estratégicas de alto impacto.</p>
+            <a href="comunidad.html" class="btn-primary">Unirse a la Red</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="cenit-box">
+            <div class="cenit-left">
+                <h3>Modelo CÉNIT</h3>
+                <p>Nuestra ruta metodológica para pasar de la incertidumbre a una transformación con sentido real, conectando propósito, personas y procesos.</p>
+                <a href="cenit.html" class="btn-primary">Iniciar la Ruta CÉNIT</a>
+            </div>
+            <div class="cenit-right">
+                <div class="cenit-badge"><span>CÉNIT</span></div>
             </div>
         </div>
     </section>
 
-    <section id="modelo-cenit" class="cenit-section">
-        <h2 class="section-title">Nuestro Marco Conceptual: <span>Modelo CÉNIT</span></h2>
-        <div class="cenit-grid">
-            <div class="cenit-card">
-                <i class="fa-solid fa-chart-line"></i>
-                <h3>Cultura de Calidad</h3>
-                <p>Implementación de estándares internacionales para la trazabilidad y optimización del ecosistema educativo.</p>
-            </div>
-            <div class="cenit-card">
-                <i class="fa-solid fa-graduationcap"></i>
-                <h3>Enfoque en el Aprendizaje</h3>
-                <p>Modelos dinámicos centrados en el desarrollo integral del estudiante y el diseño universal de entornos didácticos.</p>
-            </div>
-            <div class="cenit-card">
-                <i class="fa-solid fa-users-gear"></i>
-                <h3>Nuevas Prácticas Lideradas</h3>
-                <p>Empoderamiento del equipo docente hacia roles de gestión transformadora y co-creación pedagógica.</p>
-            </div>
-            <div class="cenit-card">
-                <i class="fa-solid fa-robot"></i>
-                <h3>Innovación Tecnológica</h3>
-                <p>Automatización de procesos administrativos complejos usando arquitecturas digitales de bajo costo.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="capacidades" class="capacidades-section">
-        <div class="capacidades-container">
-            <h2 class="section-title">Líneas de <span>Capacidad Estratégica</span></h2>
-            <div class="capacidades-grid">
-                <div class="cap-card">
-                    <h4>Gestión Curricular</h4>
-                    <p>Diseño y reestructuración de planes globales académicos adaptados a regulaciones modernas y metodologías activas.</p>
-                </div>
-                <div class="cap-card">
-                    <h4>Automatización Institucional</h4>
-                    <p>Sistemas integrados para simplificar las comunicaciones escolares, bases de datos masivas y flujos informativos de coordinación.</p>
-                </div>
-                <div class="cap-card">
-                    <h4>Formación Formadores</h4>
-                    <p>Talleres enfocados en pedagogías emergentes, diseño universal para el aprendizaje (DUA) y liderazgo transformador.</p>
-                </div>
-                <div class="cap-card">
-                    <h4>Diagnóstico y Auditoría</h4>
-                    <p>Análisis riguroso de procesos internos bajo normativas de gestión para asegurar el cumplimiento de metas y retención escolar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="contacto-section">
-        <h2 class="section-title">Diseñemos tu <span>Ruta de Acompañamiento</span></h2>
-        <div class="form-container">
-            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Estructura del formulario lista. En la fase de ejecución conectaremos la base de datos.');">
-                <div class="form-group">
-                    <label for="nombre">Nombre Completo o Institución</label>
-                    <input type="text" id="nombre" required placeholder="Ej. Juan Pérez / Colegio Nueva Aventura">
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico de Contacto</label>
-                    <input type="email" id="email" required placeholder="ejemplo@correo.com">
-                </div>
-                <div class="form-group">
-                    <label for="asunto">Área de Interés Principal</label>
-                    <input type="text" id="asunto" required placeholder="Ej. Unirse a la Red de Maestros / Consultoría Modelo CÉNIT">
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Describe brevemente tus fortalezas o las necesidades de tu sector</label>
-                    <textarea id="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
-                </div>
-                <div style="font-size: 12px; color: #64748B; margin-bottom: 20px; line-height: 1.4;">
-                    <strong>Nota de confidencialidad:</strong> Los datos suministrados en este espacio serán tratados bajo estricta reserva y con el fin exclusivo de conectar fortalezas profesionales con necesidades identificadas en el sector educativo.
-                </div>
-                <button type="submit" class="btn-primary" style="width: 100%;">Enviar Solicitud e Iniciar Ruta</button>
-            </form>
-        </div>
-    </section>
-
-    <footer style="background-color: #0B111E; padding: 30px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 14px; color: #64748B;">
-        <p>&copy; 2026 RedConecta. Todos los derechos reservados. Desarrollo e Innovación en Gestión Educativa.</p>
+    <footer style="background-color: #00142E; padding: 40px; text-align: center; color: var(--gris-medio);">
+        <p>&copy; 2026 RedConecta. Todos los derechos reservados.</p>
     </footer>
 
 </body>
