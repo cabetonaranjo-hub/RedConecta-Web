@@ -4,177 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dirección Estratégica | RedConecta</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* VARIABLES DE IDENTIDAD CORPORATIVA DE REDCONECTA */
-        :root {
-            --azul-institucional: #002D62;
-            --azul-oscuro: #001B3D;
-            --turquesa-conexion: #008C95;
-            --turquesa-claro: #14AEB7;
-            --gris-claro: #F5F7FA;
-            --gris-medio: #D9E1E8;
-            --blanco: #FFFFFF;
-        }
+        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --gris-medio: #D9E1E8; --blanco: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--azul-osc); color: var(--gris-medio); padding-top: 70px; }
 
-        /* Estilos Base y Reseteo */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
+        /* HEADER UNIFICADO */
+        header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--azul-inst); font-size: 13px; font-weight: 600; text-decoration: none; }
+        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
 
-        body {
-            background-color: var(--azul-oscuro);
-            color: var(--gris-claro);
-            overflow-x: hidden;
-            padding-top: 90px;
-        }
+        section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 30px; color: var(--blanco); }
+        .section-title span { color: var(--turq); }
 
-        section {
-            padding: 60px 5%;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .obj-box { background: linear-gradient(135deg, var(--azul-inst) 0%, #00142E 100%); border-left: 5px solid var(--turq); padding: 40px; border-radius: 0 16px 16px 0; margin-bottom: 50px; }
+        .obj-box p { font-size: 18px; font-weight: 500; color: var(--blanco); line-height: 1.6; }
 
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--blanco);
-        }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .service-card { background-color: var(--azul-inst); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .service-card:hover { border-color: var(--turq); transform: translateY(-5px); }
+        .service-card h3 { font-size: 17px; color: var(--blanco); margin-bottom: 12px; }
+        
+        footer { background-color: #00142E; padding: 40px 5%; text-align: center; color: var(--gris-medio); font-size: 14px; margin-top: 50px; }
+    </style>
+</head>
+<body>
 
-        .section-title span {
-            color: var(--turquesa-conexion);
-        }
+    <header>
+        <img src="logo.png" alt="Logo" style="height: 40px;">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="direccion.html">Dirección</a>
+            <a href="desarrollo.html">Desarrollo</a>
+            <a href="optimizacion.html">Optimización</a>
+            <a href="comunidad.html">Comunidad</a>
+        </nav>
+        <a href="ruta.html" class="btn-cta">Agendar Consejería</a>
+    </header>
 
-        /* Bloque de Introducción y Objetivo */
-        .obj-box {
-            background: linear-gradient(135deg, var(--azul-institucional) 0%, #00142E 100%);
-            border-left: 5px solid var(--turquesa-conexion);
-            padding: 40px;
-            border-radius: 0 16px 16px 0;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
+    <section>
+        <h1 class="section-title">Dirección <span>Estratégica</span></h1>
+        <div class="obj-box">
+            <p>Acompañamos a las organizaciones en la consolidación de sus estructuras de gobierno, planes estratégicos (PMI) y diagnóstico operativo para asegurar la coherencia institucional.</p>
+        </div>
 
-        .obj-box h2 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--turquesa-conexion);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
+        <div class="services-grid">
+            <div class="service-card">
+                <h3><i class="fa-solid fa-chart-line" style="color:var(--turq); margin-right:10px;"></i> Planes Estratégicos (PMI)</h3>
+                <p>Estructuración de rutas de mejoramiento institucional o empresarial con metas claras, KPIs de seguimiento y cronogramas de ejecución efectivos.</p>
+            </div>
+            <div class="service-card">
+                <h3><i class="fa-solid fa-users-gear" style="color:var(--turq); margin-right:10px;"></i> Gobierno Corporativo</h3>
+                <p>Diseño de estructuras organizacionales, organigramas funcionales y definición de roles que eliminan cuellos de botella operativos.</p>
+            </div>
+            <div class="service-card">
+                <h3><i class="fa-solid fa-magnifying-glass-chart" style="color:var(--turq); margin-right:10px;"></i> Diagnóstico Operativo</h3>
+                <p>Evaluación integral de la organización para identificar brechas entre la visión estratégica y la realidad cotidiana del equipo.</p>
+            </div>
+        </div>
+    </section>
 
-        .obj-box p {
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 1.6;
-            color: var(--gris-claro);
-        }
+    <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados.</p></footer>
 
-        /* Rejilla de Servicios (Planes) */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .service-card {
-            background-color: var(--azul-institucional);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--turquesa-conexion);
-            box-shadow: 0 10px 25px rgba(0, 140, 149, 0.2);
-        }
-
-        .service-card .icon-wrapper {
-            background-color: var(--azul-oscuro);
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            border: 1px solid rgba(0, 140, 149, 0.3);
-        }
-
-        .service-card i {
-            font-size: 22px;
-            color: var(--turquesa-conexion);
-        }
-
-        .service-card h3 {
-            font-size: 18px;
-            color: var(--blanco);
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        .service-card p {
-            color: var(--gris-medio);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* Bloque de Importancia y Beneficios */
-        .benefits-bg {
-            background-color: #00142E;
-            width: 100%;
-            margin-top: 40px;
-        }
-
-        .benefits-container {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .benefits-text {
-            flex: 1.2;
-        }
-
-        .benefits-text h2 {
-            font-size: 26px;
-            color: var(--blanco);
-            margin-bottom: 20px;
-        }
-
-        .benefits-text p {
-            color: var(--gris-medio);
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .benefits-visual {
-            flex: 0.8;
-            display: flex;
-            justify-content: center;
-        }
-
-        .benefits-badge {
-            background-color: var(--azul-institucional);
-            border: 1px solid rgba(0, 140, 149, 0.3);
-            border-radius: 16px;
-            padding: 40px;
-            text-align: center;
-            max-width: 300px;
-            box-shadow: 0
+</body>
+</html>

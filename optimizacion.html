@@ -4,265 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimización Operativa | RedConecta</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* VARIABLES DE IDENTIDAD CORPORATIVA DE REDCONECTA */
-        :root {
-            --azul-institucional: #002D62;
-            --azul-oscuro: #001B3D;
-            --turquesa-conexion: #008C95;
-            --turquesa-claro: #14AEB7;
-            --gris-claro: #F5F7FA;
-            --gris-medio: #D9E1E8;
-            --blanco: #FFFFFF;
-        }
+        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --turq-claro: #14AEB7; --gris-claro: #F5F7FA; --gris-medio: #D9E1E8; --blanco: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--azul-osc); color: var(--gris-claro); padding-top: 80px; }
+        
+        /* HEADER UNIFICADO */
+        header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--azul-inst); font-size: 13px; font-weight: 600; text-decoration: none; }
+        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
 
-        /* Estilos Base y Reseteo */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
+        section { padding: 50px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 30px; color: var(--blanco); }
+        .section-title span { color: var(--turq); }
 
-        body {
-            background-color: var(--azul-oscuro);
-            color: var(--gris-claro);
-            overflow-x: hidden;
-            padding-top: 90px;
-        }
+        .obj-box { background: linear-gradient(135deg, var(--azul-inst) 0%, #00142E 100%); border-left: 5px solid var(--turq); padding: 30px; border-radius: 0 10px 10px 0; margin-bottom: 40px; }
+        .obj-box p { font-size: 15px; color: var(--gris-claro); line-height: 1.7; }
 
-        section {
-            padding: 60px 5%;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--blanco);
-        }
-
-        .section-title span {
-            color: var(--turquesa-conexion);
-        }
-
-        /* Objetivo */
-        .obj-box {
-            background: linear-gradient(135deg, var(--azul-institucional) 0%, #00142E 100%);
-            border-left: 5px solid var(--turquesa-conexion);
-            padding: 40px;
-            border-radius: 0 16px 16px 0;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .obj-box h2 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--turquesa-conexion);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .obj-box p {
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 1.6;
-            color: var(--gris-claro);
-        }
-
-        /* Rejilla de Herramientas Tecnológicas */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .tool-card {
-            background-color: var(--azul-institucional);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .tool-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--turquesa-conexion);
-            box-shadow: 0 10px 25px rgba(0, 140, 149, 0.25);
-        }
-
-        .tool-card .card-top h4 {
-            color: var(--turquesa-conexion);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .tool-card .card-top h3 {
-            font-size: 18px;
-            color: var(--blanco);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .tool-card p {
-            color: var(--gris-medio);
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .tool-tag {
-            background-color: var(--azul-oscuro);
-            color: var(--gris-claro);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 600;
-            display: inline-block;
-            border: 1px solid rgba(255,255,255,0.05);
-            align-self: flex-start;
-        }
-
-        /* Importancia y Beneficios */
-        .benefits-bg {
-            background-color: #00142E;
-            width: 100%;
-            margin-top: 40px;
-        }
-
-        .benefits-container {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .benefits-text {
-            flex: 1.2;
-        }
-
-        .benefits-text h2 {
-            font-size: 26px;
-            color: var(--blanco);
-            margin-bottom: 20px;
-        }
-
-        .benefits-text p {
-            color: var(--gris-medio);
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .benefits-visual {
-            flex: 0.8;
-            display: flex;
-            justify-content: center;
-        }
-
-        .benefits-badge {
-            background-color: var(--azul-institucional);
-            border: 1px solid rgba(0, 140, 149, 0.3);
-            border-radius: 16px;
-            padding: 40px;
-            text-align: center;
-            max-width: 320px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-
-        .benefits-badge i {
-            font-size: 50px;
-            color: var(--turquesa-conexion);
-            margin-bottom: 15px;
-        }
-
-        .benefits-badge h4 {
-            font-size: 16px;
-            color: var(--blanco);
-            line-height: 1.4;
-        }
-
-        /* Botón de Acción */
-        .btn-primary {
-            background-color: var(--turquesa-conexion);
-            color: var(--blanco);
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 140, 149, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--turquesa-claro);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(20, 174, 183, 0.4);
-        }
-
-        @media (max-width: 992px) {
-            .benefits-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .benefits-visual {
-                margin-top: 30px;
-            }
-        }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .tool-card { background-color: var(--azul-inst); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
+        .tool-card h3 { color: var(--blanco); font-size: 16px; margin-bottom: 10px; }
+        .tool-card p { color: var(--gris-medio); font-size: 13px; line-height: 1.6; }
+        
+        footer { background-color: #00142E; padding: 30px; text-align: center; color: var(--gris-medio); font-size: 13px; margin-top: 40px; }
     </style>
 </head>
 <body>
 
-    <header style="width: 100%; height: 90px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; left: 0; z-index: 1000; border-bottom: 3px solid var(--turquesa-conexion); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
-        <div class="logo-container" style="display: flex; align-items: center; height: 100%;">
-            <img src="logo.png" alt="Logo RedConecta" style="height: 65px; width: auto; display: block; object-fit: contain;">
-        </div>
-
-        <nav style="display: flex; gap: 24px; align-items: center;">
-            <a href="index.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Home</a>
-            <a href="direccion.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Dirección Estratégica</a>
-            <a href="desarrollo.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Desarrollo Misional</a>
-            <a href="optimizacion.html" style="color: var(--turquesa-conexion); text-decoration: none; font-weight: 700; font-size: 14px;">Optimización Operativa</a>
-            <a href="comunidad.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Comunidad y Networking</a>
+    <header>
+        <img src="logo.png" alt="Logo" style="height: 40px;">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="direccion.html">Dirección</a>
+            <a href="desarrollo.html">Desarrollo</a>
+            <a href="optimizacion.html">Optimización</a>
+            <a href="comunidad.html">Comunidad</a>
         </nav>
-        
-        <a href="ruta.html" style="background-color: var(--turquesa-conexion); color: var(--blanco); border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 13px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0, 140, 149, 0.2);" onmouseover="this.style.backgroundColor='var(--turquesa-claro)'" onmouseout="this.style.backgroundColor='var(--turquesa-conexion)'">Agendar Consejería</a>
+        <a href="ruta.html" class="btn-cta">Agendar Consejería</a>
     </header>
 
     <section>
         <h1 class="section-title">Línea de <span>Optimización Operativa</span></h1>
-        
         <div class="obj-box">
-            <h2>Propósito Tecnológico</h2>
-            <p>Implementar herramientas tecnológicas y sistemas de automatización a la medida, bajo un enfoque <strong>low-cost de alta eficiencia</strong>, diseñados exclusivamente para responder a las necesidades críticas de empresas y colegios. Nos enfocamos en optimizar procesos operativos sin inversiones restrictivas en licencias, minimizando el desgaste de los equipos y maximizando la rentabilidad y productividad institucional.</p>
+            <p>Implementamos herramientas tecnológicas y sistemas de automatización a la medida, bajo un enfoque <strong>low-cost de alta eficiencia</strong>, diseñados para responder a las necesidades críticas de empresas y colegios. Maximizamos la productividad institucional sin inversiones restrictivas.</p>
+        </div>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <h3>SIGED (Gestión Educativa)</h3>
+                <p>Automatización de notas, asistencia y reportes académicos para liberar tiempo administrativo en instituciones.</p>
+            </div>
+            <div class="tool-card">
+                <h3>SGTH Automatizado</h3>
+                <p>Gestión de procesos de selección, seguimiento disciplinario y trazabilidad documental automatizada.</p>
+            </div>
+            <div class="tool-card">
+                <h3>Lead Gen & Web</h3>
+                <p>Sistemas de captación de clientes mediante formularios integrados y sitios web de alto impacto a bajo costo.</p>
+            </div>
         </div>
     </section>
 
-    <section style="padding-top: 0;">
-        <h2 class="section-title" style="font-size: 28px; text-align: left; margin-bottom: 10px;">Ecosistema de Soluciones Digitales</h2>
-        <p style="color: var(--gris-medio); font-size: 15px; margin-bottom: 30px;">Módulos de software e infraestructura accesibles y escalables para transformar la operación diaria.</p>
-        
-        <div class="tools-grid">
-            <div class="tool-card">
-                <div class="card-
+    <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados.</p></footer>
+
+</body>
+</html>

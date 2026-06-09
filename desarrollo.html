@@ -4,231 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo Misional | RedConecta</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* VARIABLES DE IDENTIDAD CORPORATIVA DE REDCONECTA */
-        :root {
-            --azul-institucional: #002D62;
-            --azul-oscuro: #001B3D;
-            --turquesa-conexion: #008C95;
-            --turquesa-claro: #14AEB7;
-            --gris-claro: #F5F7FA;
-            --gris-medio: #D9E1E8;
-            --blanco: #FFFFFF;
-        }
+        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --turq-claro: #14AEB7; --gris-claro: #F5F7FA; --gris-medio: #D9E1E8; --blanco: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--azul-osc); color: var(--gris-claro); padding-top: 70px; }
+        
+        /* HEADER Y FOOTER UNIFICADOS */
+        header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--azul-inst); font-size: 13px; font-weight: 600; text-decoration: none; }
+        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
+        footer { background-color: #00142E; padding: 40px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: var(--gris-medio); font-size: 14px; }
 
-        /* Estilos Base y Reseteo */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
+        section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 36px; font-weight: 700; margin-bottom: 30px; color: var(--blanco); }
+        .section-title span { color: var(--turq); }
 
-        body {
-            background-color: var(--azul-oscuro);
-            color: var(--gris-claro);
-            overflow-x: hidden;
-            padding-top: 90px;
-        }
-
-        section {
-            padding: 60px 5%;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--blanco);
-        }
-
-        .section-title span {
-            color: var(--turquesa-conexion);
-        }
-
-        /* Objetivo */
-        .obj-box {
-            background: linear-gradient(135deg, var(--azul-institucional) 0%, #00142E 100%);
-            border-left: 5px solid var(--turquesa-conexion);
-            padding: 40px;
-            border-radius: 0 16px 16px 0;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .obj-box p {
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 1.6;
-            color: var(--gris-claro);
-        }
-
-        /* Segmentación de Áreas (Colegios vs Empresas) */
-        .segment-container {
-            margin-bottom: 60px;
-        }
-
-        .segment-header {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--blanco);
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 10px;
-        }
-
-        .segment-header.colegio i { color: #34D399; }
-        .segment-header.empresa i { color: #38BDF8; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background-color: var(--azul-institucional);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--turquesa-conexion);
-            box-shadow: 0 10px 25px rgba(0, 140, 149, 0.2);
-        }
-
-        .service-card h3 {
-            font-size: 17px;
-            color: var(--blanco);
-            margin-bottom: 12px;
-            font-weight: 700;
-            line-height: 1.4;
-        }
-
-        .service-card p {
-            color: var(--gris-medio);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* Footer / CTA */
-        .btn-primary {
-            background-color: var(--turquesa-conexion);
-            color: var(--blanco);
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 140, 149, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--turquesa-claro);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(20, 174, 183, 0.4);
-        }
+        .obj-box { background: linear-gradient(135deg, var(--azul-inst) 0%, #00142E 100%); border-left: 5px solid var(--turq); padding: 40px; border-radius: 0 16px 16px 0; margin-bottom: 50px; }
+        .segment-header { font-size: 24px; color: var(--blanco); margin-bottom: 25px; display: flex; align-items: center; gap: 12px; border-bottom: 2px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .service-card { background-color: var(--azul-inst); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .service-card:hover { border-color: var(--turq); transform: translateY(-5px); }
+        .service-card h3 { font-size: 17px; color: var(--blanco); margin-bottom: 12px; }
+        .service-card p { color: var(--gris-medio); font-size: 14px; line-height: 1.6; }
     </style>
 </head>
 <body>
 
-    <header style="width: 100%; height: 90px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; left: 0; z-index: 1000; border-bottom: 3px solid var(--turquesa-conexion); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
-        <div class="logo-container" style="display: flex; align-items: center; height: 100%;">
-            <img src="logo.png" alt="Logo RedConecta" style="height: 65px; width: auto; display: block; object-fit: contain;">
-        </div>
-
-        <nav style="display: flex; gap: 24px; align-items: center;">
-            <a href="index.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Home</a>
-            <a href="direccion.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Dirección Estratégica</a>
-            <a href="desarrollo.html" style="color: var(--turquesa-conexion); text-decoration: none; font-weight: 700; font-size: 14px;">Desarrollo Misional</a>
-            <a href="optimizacion.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Optimización Operativa</a>
-            <a href="comunidad.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Comunidad y Networking</a>
+    <header>
+        <img src="logo.png" alt="Logo" style="height: 40px;">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="direccion.html">Dirección</a>
+            <a href="desarrollo.html">Desarrollo</a>
+            <a href="optimizacion.html">Optimización</a>
+            <a href="comunidad.html">Comunidad</a>
         </nav>
-        
-        <a href="ruta.html" style="background-color: var(--turquesa-conexion); color: var(--blanco); border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 13px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0, 140, 149, 0.2);" onmouseover="this.style.backgroundColor='var(--turquesa-claro)'" onmouseout="this.style.backgroundColor='var(--turquesa-conexion)'">Agendar Consejería</a>
+        <a href="ruta.html" class="btn-cta">Agendar Consejería</a>
     </header>
 
     <section>
         <h1 class="section-title">Línea de <span>Desarrollo Misional</span></h1>
-        
         <div class="obj-box">
             <p>Acompañamos el fortalecimiento y la maduración del núcleo operativo y de valor que da sentido a la organización, adaptando metodologías estratégicas de aprendizaje, convivencia y cultura al sector correspondiente.</p>
         </div>
 
-        <div class="segment-container">
-            <div class="segment-header colegio">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <h2>Servicios Especializados para Instituciones Educativas</h2>
+        <div class="segment-header">
+            <i class="fa-solid fa-graduation-cap" style="color: #34D399;"></i>
+            <h2>Servicios para Instituciones Educativas</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>3. Fortalecimiento de la Innovación y Programas Institucionales</h3>
+                <p>Diseño curricular de vanguardia, actualización de mallas académicas y estructuración de metodologías activas (como ABP o DUA) orientadas a la innovación pedagógica y retención estudiantil.</p>
             </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>3. Fortalecimiento de la Innovación y Programas Institucionales</h3>
-                    <p>Diseño curricular de vanguardia, actualización de mallas académicas y estructuración de metodologías activas (como ABP o DUA) orientadas a la innovación pedagógica y retención estudiantil.</p>
-                </div>
-                <div class="service-card">
-                    <h3>4. Fortalecimiento de la Convivencia y la Cultura Institucional</h3>
-                    <p>Ajuste de manuales de convivencia, rutas de atención integral, mediación escolar y programas transversales de bienestar socioemocional para toda la comunidad académica.</p>
-                </div>
-                <div class="service-card">
-                    <h3>5. Fortalecimiento de la Comunicación y Vínculo con la Comunidad</h3>
-                    <p>Optimización del ecosistema relacional con familias y acudientes. Canales formativos, escuelas de padres dinámicas y estrategias de fidelización para la comunidad educativa.</p>
-                </div>
+            <div class="service-card">
+                <h3>4. Fortalecimiento de la Convivencia y la Cultura Institucional</h3>
+                <p>Ajuste de manuales de convivencia, rutas de atención integral, mediación escolar y programas transversales de bienestar socioemocional para toda la comunidad académica.</p>
+            </div>
+            <div class="service-card">
+                <h3>5. Fortalecimiento de la Comunicación y Vínculo con la Comunidad</h3>
+                <p>Optimización del ecosistema relacional con familias y acudientes. Canales formativos, escuelas de padres dinámicas y estrategias de fidelización para la comunidad educativa.</p>
             </div>
         </div>
 
-        <div class="segment-container">
-            <div class="segment-header empresa">
-                <i class="fa-solid fa-building"></i>
-                <h2>Servicios Especializados para Empresas y Organizaciones</h2>
+        <div class="segment-header">
+            <i class="fa-solid fa-building" style="color: #38BDF8;"></i>
+            <h2>Servicios para Empresas y Organizaciones</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>3. Fortalecimiento de la Innovación y Gestión del Conocimiento</h3>
+                <p>Diseño de programas de capacitación corporativa, universidades empresariales e inducciones dinámicas para empaquetar, innovar y transferir el saber técnico del negocio.</p>
             </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>3. Fortalecimiento de la Innovación y Gestión del Conocimiento</h3>
-                    <p>Diseño de programas de capacitación corporativa, universidades empresariales e inducciones dinámicas para empaquetar, innovar y transferir el saber técnico del negocio.</p>
-                </div>
-                <div class="service-card">
-                    <h3>4. Fortalecimiento de la Cultura Corporativa y Entorno Laboral</h3>
-                    <p>Estructuración de planes de bienestar del colaborador, alineación de valores corporativos, códigos de ética internos y metodologías de resolución pacífica de conflictos laborales.</p>
-                </div>
-                <div class="service-card">
-                    <h3>5. Fortalecimiento de la Comunicación Estratégica y Stakeholders</h3>
-                    <p>Desarrollo de canales eficientes de comunicación interna y externa. Fortalecimiento del vínculo con clientes, aliados clave y programas de responsabilidad social de alto impacto.</p>
-                </div>
+            <div class="service-card">
+                <h3>4. Fortalecimiento de la Cultura Corporativa y Entorno Laboral</h3>
+                <p>Estructuración de planes de bienestar del colaborador, alineación de valores corporativos, códigos de ética internos y metodologías de resolución pacífica de conflictos laborales.</p>
+            </div>
+            <div class="service-card">
+                <h3>5. Fortalecimiento de la Comunicación Estratégica y Stakeholders</h3>
+                <p>Desarrollo de canales eficientes de comunicación interna y externa. Fortalecimiento del vínculo con clientes, aliados clave y programas de responsabilidad social de alto impacto.</p>
             </div>
         </div>
-
     </section>
 
-    <section style="text-align: center; padding-top: 0; padding-bottom: 80px;">
-        <h2 class="section-title" style="font-size: 28px;">Robustezca el núcleo misional de su organización</h2>
-        <p style="color: #94A3B8; margin-bottom: 30px; max-width: 650px; margin-left: auto; margin-right: auto;">No importa si lidera un ecosistema de aprendizaje o una estructura corporativa; diseñamos rutas que convierten su misión en resultados sostenibles.</p>
-        <a href="ruta.html" class="btn-primary">Agendar Consejería Misional</a>
-    </section>
-
-    <footer style="background-color: #00142E; padding: 40px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 14px; color: var(--gris-medio);">
-        <p>&copy; 2026 RedConecta. Todos los derechos reservados. Consejería y Desarrollo Organizacional.</p>
-    </footer>
+    <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados. Consejería y Desarrollo Organizacional.</p></footer>
 
 </body>
 </html>

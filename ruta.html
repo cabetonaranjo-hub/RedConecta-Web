@@ -4,279 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseñemos tu Ruta | RedConecta</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* VARIABLES DE IDENTIDAD CORPORATIVA DE REDCONECTA */
-        :root {
-            --azul-institucional: #002D62;
-            --azul-oscuro: #001B3D;
-            --turquesa-conexion: #008C95;
-            --turquesa-claro: #14AEB7;
-            --gris-claro: #F5F7FA;
-            --gris-medio: #D9E1E8;
-            --blanco: #FFFFFF;
-        }
+        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --turq-claro: #14AEB7; --gris-claro: #F5F7FA; --gris-medio: #D9E1E8; --blanco: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--azul-osc); color: var(--gris-claro); padding-top: 70px; }
+        
+        /* HEADER UNIFICADO */
+        header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--azul-inst); font-size: 13px; font-weight: 600; text-decoration: none; }
+        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
 
-        /* Estilos Base y Reseteo */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
+        section { padding: 60px 5%; max-width: 800px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 20px; color: var(--blanco); }
+        .section-title span { color: var(--turq); }
 
-        body {
-            background-color: var(--azul-oscuro);
-            color: var(--gris-claro);
-            overflow-x: hidden;
-            padding-top: 90px;
-        }
-
-        section {
-            padding: 50px 5%;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--blanco);
-        }
-
-        .section-title span {
-            color: var(--turquesa-conexion);
-        }
-
-        /* Bloque Informativo */
-        .ruta-intro {
-            background: linear-gradient(135deg, var(--azul-institucional) 0%, #00142E 100%);
-            border-top: 4px solid var(--turquesa-conexion);
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto 40px auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .ruta-intro h2 {
-            font-size: 22px;
-            color: var(--blanco);
-            margin-bottom: 15px;
-        }
-
-        .ruta-intro p {
-            font-size: 15px;
-            color: var(--gris-medio);
-            line-height: 1.7;
-        }
-
-        /* Formulario Nativo Estilizado */
-        .form-container {
-            background-color: var(--azul-institucional);
-            padding: 40px;
-            border-radius: 16px;
-            width: 100%;
-            max-width: 700px;
-            margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.05);
-            position: relative;
-        }
-
-        .form-group {
-            margin-bottom: 22px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--gris-claro);
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 14px;
-            background-color: var(--azul-oscuro);
-            border: 1px solid #334155;
-            border-radius: 8px;
-            color: var(--blanco);
-            font-size: 15px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--turquesa-conexion);
-            box-shadow: 0 0 0 3px rgba(0, 140, 149, 0.15);
-        }
-
-        /* Select custom arrow */
-        .form-group select {
-            appearance: none;
-            background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-            background-repeat: no-repeat;
-            background-position: right 14px center;
-        }
-
-        .btn-primary {
-            background-color: var(--turquesa-conexion);
-            color: var(--blanco);
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 140, 149, 0.3);
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--turquesa-claro);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(20, 174, 183, 0.4);
-        }
-
-        .btn-primary:disabled {
-            background-color: #475569;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        /* Pantalla de Éxito Estilizada */
-        .success-card {
-            display: none;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .success-card i {
-            font-size: 60px;
-            color: #34D399;
-            margin-bottom: 20px;
-        }
-
-        .success-card h3 {
-            font-size: 24px;
-            color: var(--blanco);
-            margin-bottom: 15px;
-        }
-
-        .success-card p {
-            color: var(--gris-medio);
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
-            .form-container {
-                padding: 25px;
-            }
-        }
+        .form-container { background-color: var(--azul-inst); padding: 40px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; background: var(--azul-osc); border: 1px solid #334155; border-radius: 6px; color: var(--blanco); }
+        
+        .btn-primary { background-color: var(--turq); color: var(--blanco); padding: 14px; border: none; border-radius: 6px; width: 100%; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .btn-primary:hover { background-color: var(--turq-claro); }
+        
+        .success-card { display: none; text-align: center; padding: 20px; }
+        footer { background-color: #00142E; padding: 30px; text-align: center; color: var(--gris-medio); font-size: 13px; margin-top: 40px; }
     </style>
 </head>
 <body>
 
-    <header style="width: 100%; height: 90px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; left: 0; z-index: 1000; border-bottom: 3px solid var(--turquesa-conexion); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
-        <div class="logo-container" style="display: flex; align-items: center; height: 100%;">
-            <img src="logo.png" alt="Logo RedConecta" style="height: 65px; width: auto; display: block; object-fit: contain;">
-        </div>
-
-        <nav style="display: flex; gap: 24px; align-items: center;">
-            <a href="index.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Home</a>
-            <a href="direccion.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Dirección Estratégica</a>
-            <a href="desarrollo.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Desarrollo Misional</a>
-            <a href="optimizacion.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Optimización Operativa</a>
-            <a href="comunidad.html" style="color: var(--azul-oscuro); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.3s;" onmouseover="this.style.color='var(--turquesa-conexion)'" onmouseout="this.style.color='var(--azul-oscuro)'">Comunidad y Networking</a>
+    <header>
+        <img src="logo.png" alt="Logo" style="height: 40px;">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="direccion.html">Dirección</a>
+            <a href="desarrollo.html">Desarrollo</a>
+            <a href="optimizacion.html">Optimización</a>
+            <a href="comunidad.html">Comunidad</a>
         </nav>
-        
-        <a href="ruta.html" style="background-color: var(--turquesa-conexion); color: var(--blanco); border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 13px; box-shadow: 0 4px 10px rgba(0, 140, 149, 0.2);">Agendar Consejería</a>
+        <a href="ruta.html" class="btn-cta">Agendar Consejería</a>
     </header>
 
     <section>
-        <h1 class="section-title">Diseñemos tu <span>Ruta de Acompañamiento</span></h1>
-        
-        <div class="ruta-intro">
-            <h2>Bienvenido al espacio de transformación de RedConecta</h2>
-            <p>Por favor, diligencie el siguiente formulario técnico. Los datos suministrados en este espacio serán tratados bajo estricta reserva y con el fin exclusivo de conectar sus necesidades organizacionales con nuestro modelo integral de consejería estratégica.</p>
-        </div>
-
+        <h1 class="section-title">Diseñemos tu <span>Ruta</span></h1>
         <div class="form-container">
             <form id="formRutaConecta">
                 <div class="form-group">
-                    <label for="nombre_institucion">Nombre de la Organización o Institución</label>
-                    <input type="text" id="nombre_institucion" required placeholder="Ej. Colegio Emmanuel Mounier / Empresa Innovadora S.A.S.">
+                    <label>Nombre de la Institución</label>
+                    <input type="text" id="nombre_institucion" required placeholder="Ej. Institución Educativa Ejemplo">
                 </div>
-
                 <div class="form-group">
-                    <label for="correo_contacto">Correo Electrónico Corporativo / Institucional</label>
+                    <label>Correo Electrónico</label>
                     <input type="email" id="correo_contacto" required placeholder="ejemplo@organizacion.com">
                 </div>
-
                 <div class="form-group">
-                    <label for="linea_interes">Línea de Capacidad a Fortalecer Principal</label>
+                    <label>Línea de Interés</label>
                     <select id="linea_interes" required>
-                        <option value="" disabled selected>Seleccione una opción...</option>
                         <option value="Dirección Estratégica">Dirección Estratégica</option>
                         <option value="Desarrollo Misional">Desarrollo Misional</option>
-                        <option value="Optimización Operativa (Low-Cost)">Optimización Operativa (Low-Cost)</option>
-                        <option value="Ruta Integral Modelo CÉNIT">Ruta Integral Modelo CÉNIT</option>
+                        <option value="Optimización Operativa">Optimización Operativa</option>
+                        <option value="Modelo CÉNIT">Modelo CÉNIT</option>
                     </select>
                 </div>
-
                 <div class="form-group">
-                    <label for="mensaje_solicitud">Describa brevemente los desafíos actuales de su sector o institución</label>
-                    <textarea id="mensaje_solicitud" rows="5" required placeholder="Escriba aquí sus comentarios..."></textarea>
+                    <label>Descripción del Desafío</label>
+                    <textarea id="mensaje_solicitud" rows="4" required></textarea>
                 </div>
-
-                <button type="submit" id="btnEnviar" class="btn-primary">Enviar Solicitud e Iniciar Ruta</button>
+                <button type="submit" id="btnEnviar" class="btn-primary">Enviar Solicitud</button>
             </form>
-
             <div id="successCard" class="success-card">
-                <i class="fa-solid fa-circle-check animate__animated animate__zoomIn"></i>
-                <h3>¡Solicitud Recibida con Éxito!</h3>
-                <p>Tu información se ha conectado correctamente a nuestra base de datos en Supabase. El sistema ha activado el Webhook de procesamiento. En breve nos pondremos en contacto para agendar tu consejería y diseñar tu ruta a la medida.</p>
+                <i class="fa-solid fa-circle-check" style="font-size: 50px; color: #34D399; margin-bottom: 20px;"></i>
+                <h3>¡Solicitud Recibida!</h3>
+                <p>Nos pondremos en contacto pronto para diseñar tu ruta.</p>
             </div>
         </div>
     </section>
 
-    <footer style="background-color: #00142E; padding: 40px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 14px; color: var(--gris-medio);">
-        <p>&copy; 2026 RedConecta. Todos los derechos reservados. Consejería y Desarrollo Organizacional.</p>
-    </footer>
+    <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados.</p></footer>
 
     <script>
-        // CONFIGURACIÓN DE CREDENCIALES DE TU NUEVO PROYECTO INDEPENDIENTE EN SUPABASE
         const SUPABASE_URL = "https://ptzhakjnnrvvaodhjavg.supabase.co"; 
         const SUPABASE_ANON_KEY = "sb_publishable__IjBIUK_14QYjl7FqteJiQ_x2d7cRHV";
 
-        const formulario = document.getElementById('formRutaConecta');
-        const botonEnviar = document.getElementById('btnEnviar');
-        const tarjetaExito = document.getElementById('successCard');
-
-        formulario.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Evita la recarga tradicional de la página
+        document.getElementById('formRutaConecta').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('btnEnviar');
+            btn.disabled = true;
+            btn.innerText = "Conectando...";
             
-            // Bloqueo de seguridad del botón (UX)
-            botonEnviar.disabled = true;
-            botonEnviar.innerText = "Conectando con PostgreSQL...";
-
-            // Captura simétrica del payload alineada con las columnas creadas en tu tabla SQL
             const payload = {
                 nombre_institucion: document.getElementById('nombre_institucion').value,
                 correo_contacto: document.getElementById('correo_contacto').value,
@@ -284,37 +102,21 @@
                 mensaje_solicitud: document.getElementById('mensaje_solicitud').value
             };
 
-            try {
-                // Inyección REST directa hacia la tabla 'solicitudes' en tu nuevo entorno independiente
-                const response = await fetch(`${SUPABASE_URL}/rest/v1/solicitudes`, {
-                    method: 'POST',
-                    headers: {
-                        'apikey': SUPABASE_ANON_KEY,
-                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-                        'Content-Type': 'application/json',
-                        'Prefer': 'return=minimal' // Optimiza la transferencia de paquetes en la nube
-                    },
-                    body: JSON.stringify(payload)
-                });
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/solicitudes`, {
+                method: 'POST',
+                headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
 
-                if (response.ok) {
-                    // Transición limpia de interfaces (UX) al recibir el HTTP 201 Created de la API
-                    formulario.style.display = "none";
-                    tarjetaExito.style.display = "block";
-                } else {
-                    const errorData = await response.json();
-                    alert(`Error en Supabase: ${errorData.message || response.statusText}`);
-                    botonEnviar.disabled = false;
-                    botonEnviar.innerText = "Enviar Solicitud e Iniciar Ruta";
-                }
-            } catch (error) {
-                console.error("Error en la petición de red: ", error);
-                alert('Hubo un error de red al intentar conectar con Supabase. Revisa la consola de tu navegador.');
-                botonEnviar.disabled = false;
-                botonEnviar.innerText = "Enviar Solicitud e Iniciar Ruta";
+            if (response.ok) {
+                document.getElementById('formRutaConecta').style.display = "none";
+                document.getElementById('successCard').style.display = "block";
+            } else {
+                alert("Error al conectar con Supabase. Inténtalo más tarde.");
+                btn.disabled = false;
+                btn.innerText = "Enviar Solicitud";
             }
         });
     </script>
-
 </body>
 </html>
