@@ -3,87 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedConecta | Consejería y Acompañamiento Organizacional</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>RedConecta | Liderazgo que conecta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --azul-institucional: #002D62;
-            --azul-oscuro: #001B3D;
-            --turquesa-conexion: #008C95;
-            --turquesa-claro: #14AEB7;
-            --gris-claro: #F5F7FA;
-            --gris-medio: #D9E1E8;
-            --blanco: #FFFFFF;
-        }
+        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --blanco: #FFFFFF; --gris-medio: #D9E1E8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--azul-osc); color: var(--gris-medio); padding-top: 70px; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--azul-oscuro); color: var(--gris-claro); padding-top: 70px; }
-        section { padding: 50px 5%; width: 100%; max-width: 1200px; margin: 0 auto; }
+        /* HEADER UNIFICADO */
+        header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
+        nav { display: flex; gap: 15px; }
+        nav a { color: var(--azul-inst); font-size: 12px; font-weight: 600; text-decoration: none; }
+        .btn-header { background-color: var(--turq); color: var(--blanco); padding: 8px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none; }
 
-        /* HEADER ESTANDARIZADO */
-        header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; left: 0; z-index: 1000; border-bottom: 2px solid var(--turquesa-conexion); }
-        nav { display: flex; gap: 20px; }
-        nav a { color: var(--azul-oscuro); font-size: 13px; font-weight: 600; text-decoration: none; }
-        .btn-agendar { background-color: var(--turquesa-conexion); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
-
-        .hero-section { min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 5%; }
-        .hero-content h1 { font-size: 38px; color: var(--blanco); margin-bottom: 20px; }
-        .hero-content p { font-size: 15px; color: var(--gris-medio); max-width: 700px; margin: 0 auto 30px auto; }
+        /* HERO SECTION */
+        .hero { padding: 100px 5%; text-align: center; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: 42px; color: var(--blanco); margin-bottom: 20px; line-height: 1.2; }
+        .hero h2 { font-size: 18px; color: var(--gris-medio); margin-bottom: 20px; font-weight: 400; line-height: 1.6; }
+        .hero p { font-size: 16px; color: var(--blanco); margin-bottom: 40px; font-weight: 600; }
         
-        .btn-primary { background-color: var(--turquesa-conexion); color: var(--blanco); padding: 12px 24px; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; font-size: 14px; }
+        /* BOTONES HERO */
+        .btn-container { display: flex; gap: 15px; justify-content: center; }
+        .btn { padding: 12px 24px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 14px; transition: 0.3s; }
+        .btn-primary { background-color: var(--turq); color: var(--blanco); }
+        .btn-secondary { background-color: transparent; border: 2px solid var(--turq); color: var(--turq); }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        .cap-card { background-color: var(--azul-institucional); padding: 30px; margin: 20px auto; max-width: 700px; border-radius: 10px; border-top: 4px solid var(--turquesa-conexion); }
-        .cap-card i { font-size: 30px; color: var(--turquesa-conexion); margin-bottom: 15px; }
-        .cap-card h2 { color: var(--blanco); font-size: 20px; margin-bottom: 10px; }
-        .cap-card p { color: var(--gris-medio); font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
-
-        .cenit-box { background: linear-gradient(135deg, var(--azul-institucional) 0%, var(--azul-oscuro) 100%); border-radius: 15px; padding: 40px; display: flex; align-items: center; gap: 30px; max-width: 800px; margin: 40px auto; }
-        .cenit-badge { background-color: var(--azul-oscuro); border: 2px solid var(--turquesa-conexion); width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; }
-        
-        footer { background-color: #00142E; padding: 30px; text-align: center; color: var(--gris-medio); font-size: 13px; }
+        footer { background-color: #00142E; padding: 30px; text-align: center; color: var(--gris-medio); font-size: 13px; margin-top: 50px; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container"><img src="logo.png" alt="Logo" style="height: 40px;"></div>
+        <img src="logo.png" alt="Logo" style="height: 40px;">
         <nav>
-            <a href="index.html">Home</a>
-            <a href="direccion.html">Dirección</a>
-            <a href="desarrollo.html">Desarrollo</a>
-            <a href="optimizacion.html">Optimización</a>
-            <a href="comunidad.html">Comunidad</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="direccion.html">Dirección Estratégica</a>
+            <a href="desarrollo.html">Desarrollo Misional</a>
+            <a href="optimizacion.html">Optimización Operativa</a>
+            <a href="comunidad.html">Comunidad y Networking</a>
         </nav>
-        <a href="ruta.html" class="btn-agendar">Agendar Consejería</a>
+        <a href="ruta.html" class="btn-header">Agendar</a>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>Gestión con Visión y <span>Liderazgo de Impacto</span></h1>
-            <p>RedConecta es una organización de consejería que ayuda a las instituciones a fortalecer su gestión y optimizar sus operaciones.</p>
-            <a href="ruta.html" class="btn-primary">Diseñemos tu Ruta</a>
-        </div>
-    </section>
-
-    <section id="servicios">
-        <div class="cap-card"><i class="fa-solid fa-compass"></i><h2>Dirección Estratégica</h2><p>Estructuras de gobierno y planes estratégicos (PMI).</p><a href="direccion.html" class="btn-primary">Ver Detalles</a></div>
-        <div class="cap-card"><i class="fa-solid fa-graduation-cap"></i><h2>Desarrollo Misional</h2><p>Fortalecimiento del núcleo generador de valor.</p><a href="desarrollo.html" class="btn-primary">Ver Servicios</a></div>
-        <div class="cap-card"><i class="fa-solid fa-laptop-code"></i><h2>Optimización Operativa</h2><p>Infraestructura digital low-cost y automatización.</p><a href="optimizacion.html" class="btn-primary">Explorar Herramientas</a></div>
-        <div class="cap-card"><i class="fa-solid fa-users-viewfinder"></i><h2>Comunidad y Networking</h2><p>Red de profesionales y aliados estratégicos.</p><a href="comunidad.html" class="btn-primary">Unirse</a></div>
-    </section>
-
-    <section>
-        <div class="cenit-box">
-            <div>
-                <h3>Modelo CÉNIT</h3>
-                <p>Nuestra ruta para pasar de la incertidumbre a una transformación con sentido real.</p>
-                <a href="cenit.html" class="btn-primary" style="margin-top:15px;">Iniciar la Ruta CÉNIT</a>
-            </div>
-            <div class="cenit-badge"><span>CÉNIT</span></div>
+    <section class="hero">
+        <h1>Liderazgo que conecta.<br>Redes que transforman.</h1>
+        <h2>Acompañamos a organizaciones e instituciones educativas en el fortalecimiento de su dirección estratégica, el desarrollo de sus capacidades, la optimización de sus procesos y la construcción de comunidades de crecimiento sostenibles.</h2>
+        <p>Conectamos propósito, personas, procesos y comunidad para impulsar organizaciones más coherentes, eficientes y preparadas para los desafíos del futuro.</p>
+        
+        <div class="btn-container">
+            <a href="nosotros.html" class="btn btn-secondary">Nuestra propuesta</a>
+            <a href="comunidad.html" class="btn btn-secondary">Únete a nuestra red</a>
+            <a href="ruta.html" class="btn btn-primary">Diseñemos tu ruta</a>
         </div>
     </section>
 
