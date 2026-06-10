@@ -9,37 +9,37 @@
     <style>
         :root {
             --azul-profundo: #002D62;
-            --turquesa-suave: #008C95;
-            --blanco-puro: #FFFFFF;
+            --turquesa: #008C95;
+            --dorado: #D97706;
+            --blanco: #FFFFFF;
             --gris-fondo: #F4F7F9;
-            --texto-principal: #334155;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; line-height: 1.7; color: var(--texto-principal); }
+        body { font-family: 'Montserrat', sans-serif; line-height: 1.7; color: #334155; }
 
         /* HEADER */
-        header { background: var(--blanco-puro); padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
+        header { background: var(--blanco); padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
         nav a { margin-left: 25px; font-weight: 600; font-size: 14px; text-decoration: none; color: var(--azul-profundo); }
-        .btn-cta { background: #D97706; color: white; padding: 10px 20px; border-radius: 5px; font-weight: 700; text-decoration: none; }
+        .btn-cta { background: var(--dorado); color: white; padding: 10px 20px; border-radius: 5px; font-weight: 700; text-decoration: none; }
 
         /* HERO DE IMPACTO */
         .hero { 
-            background: linear-gradient(rgba(0,45,98,0.85), rgba(0,45,98,0.85)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(0,45,98,0.85), rgba(0,45,98,0.85)), url('montana-hero.jpg');
             background-size: cover; background-position: center;
-            color: white; padding: 120px 10%;
+            color: white; padding: 120px 10%; text-align: center;
         }
-        .hero h1 { font-size: 48px; max-width: 700px; margin-bottom: 20px; }
-        .hero p { font-size: 20px; margin-bottom: 30px; opacity: 0.9; }
-
-        /* MÉTRICAS (PRUEBA SOCIAL) */
+        .hero h1 { font-size: 48px; max-width: 800px; margin: 0 auto 20px auto; }
+        
+        /* MÉTRICAS */
         .metricas { background: var(--azul-profundo); color: white; display: grid; grid-template-columns: repeat(4, 1fr); padding: 40px 10%; text-align: center; }
         
-        /* GRID DE LÍNEAS CON ICONOS */
-        .seccion { padding: 80px 10%; }
-        .grid-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .card { background: white; padding: 40px; border-radius: 15px; border-top: 4px solid var(--turquesa-suave); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .card i { font-size: 40px; color: var(--turquesa-suave); margin-bottom: 20px; }
+        /* BLOQUES MODULARES */
+        .seccion { padding: 80px 10%; max-width: 1200px; margin: 0 auto; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .card { background: white; padding: 40px; border-radius: 15px; border-top: 4px solid var(--turquesa); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+        footer { background: var(--azul-profundo); color: white; padding: 60px 10%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
     </style>
 </head>
 <body>
@@ -49,6 +49,7 @@
         <nav>
             <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
+            <a href="cenit.html">CÉNIT</a>
             <a href="lineas.html">Líneas</a>
             <a href="comunidad.html">Comunidad</a>
             <a href="ruta.html" class="btn-cta">Contáctanos</a>
@@ -56,9 +57,10 @@
     </header>
 
     <section class="hero">
-        <h1>Conectamos propósito, personas y procesos.</h1>
-        <p>Acompañamos instituciones educativas en la construcción de rutas de fortalecimiento.</p>
-        <a href="ruta.html" style="background:var(--turquesa-suave); color:white; padding:15px 30px; border-radius:5px; text-decoration:none; font-weight:700;">Diseñemos su Ruta</a>
+        <h1>Conectamos propósito, personas y procesos para fortalecer organizaciones.</h1>
+        <p>Acompañamos instituciones educativas y organizaciones sociales en la construcción de rutas de fortalecimiento.</p>
+        <br>
+        <a href="ruta.html" style="background:var(--turquesa); color:white; padding:15px 30px; border-radius:5px; text-decoration:none; font-weight:700;">Conoce cómo acompañamos</a>
     </section>
 
     <section class="metricas">
@@ -70,24 +72,31 @@
 
     <section class="seccion">
         <h2 style="text-align:center; margin-bottom: 50px;">Nuestras líneas de fortalecimiento</h2>
-        <div class="grid-home">
+        <div class="grid-3">
             <article class="card">
-                <i class="fa-solid fa-compass"></i>
+                <i class="fa-solid fa-compass fa-2x" style="color:var(--turquesa)"></i>
                 <h3>Dirección Estratégica</h3>
-                <p>Definir el rumbo y construir estrategias que orienten el crecimiento.</p>
+                <p>Claridad y coherencia para avanzar con visión de futuro.</p>
             </article>
             <article class="card">
-                <i class="fa-solid fa-users"></i>
+                <i class="fa-solid fa-users fa-2x" style="color:var(--turquesa)"></i>
                 <h3>Desarrollo Organizacional</h3>
-                <p>Fortalecer capacidades, talento y cultura para impulsar la transformación.</p>
+                <p>Fortalecemos capacidades humanas y culturales.</p>
             </article>
             <article class="card">
-                <i class="fa-solid fa-gear"></i>
+                <i class="fa-solid fa-gear fa-2x" style="color:var(--turquesa)"></i>
                 <h3>Optimización Operativa</h3>
-                <p>Simplificar procesos y automatizar para tomar mejores decisiones.</p>
+                <p>Simplificamos y automatizamos para potenciar resultados.</p>
             </article>
         </div>
     </section>
+
+    <footer>
+        <div><img src="logo-blanco.png" style="height: 50px;"></div>
+        <div><h4>Navegación</h4><p>Inicio<br>Nosotros</p></div>
+        <div><h4>Líneas</h4><p>Dirección<br>Desarrollo</p></div>
+        <div><h4>Contacto</h4><p>Medellín, Colombia</p></div>
+    </footer>
 
 </body>
 </html>
