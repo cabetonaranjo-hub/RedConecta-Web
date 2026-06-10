@@ -17,71 +17,77 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--gris-fondo); color: var(--texto-principal); font-family: 'Montserrat', sans-serif; line-height: 1.8; font-size: 16px; padding-top: 90px; }
+        body { background-color: var(--gris-fondo); color: var(--texto-principal); font-family: 'Montserrat', sans-serif; line-height: 1.8; }
 
-        header { background: var(--blanco-puro); padding: 20px 10%; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
+        /* HEADER */
+        header { background: var(--blanco-puro); padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
         nav { display: flex; gap: 30px; }
         nav a { color: var(--azul-profundo); font-size: 14px; font-weight: 600; text-decoration: none; }
-        .btn-cta { background: var(--azul-profundo); color: var(--blanco-puro); padding: 10px 25px; border-radius: 50px; font-size: 13px; font-weight: 700; text-decoration: none; }
+        .btn-cta { background: #D97706; color: white; padding: 10px 25px; border-radius: 5px; font-size: 13px; font-weight: 700; text-decoration: none; }
 
-        section { padding: 80px 10%; max-width: 1100px; margin: 0 auto; }
-        h1 { color: var(--azul-profundo); font-size: 40px; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
-        h2 { color: var(--azul-profundo); font-size: 28px; font-weight: 800; margin-bottom: 20px; }
-        p { margin-bottom: 20px; color: var(--texto-secundario); }
+        /* HERO DOBLE COLUMNA */
+        .hero-nosotros { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 80px 10%; gap: 60px; background: white; }
+        .hero-nosotros h1 { font-size: 44px; color: var(--azul-profundo); margin-bottom: 20px; line-height: 1.1; }
+        .hero-img { width: 100%; height: 400px; background: #E2E8F0; border-radius: 20px; background-size: cover; background-position: center; }
 
-        /* Grid de acompañamiento con iconos */
+        /* SECCIÓN PRINCIPIOS (BLOQUE OSCURO) */
+        .principios { background: var(--azul-profundo); color: white; padding: 80px 10%; text-align: center; }
+        .grid-principios { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 40px; margin-top: 50px; }
+        .principio-item i { font-size: 40px; color: var(--turquesa-suave); margin-bottom: 15px; }
+
+        /* SECCIÓN DE ACOMPAÑAMIENTO */
+        .seccion { padding: 80px 10%; max-width: 1100px; margin: 0 auto; }
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: var(--blanco-puro); padding: 30px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
-        .card i { font-size: 30px; color: var(--turquesa-suave); margin-bottom: 15px; }
-        .card h4 { color: var(--azul-profundo); margin-bottom: 10px; font-size: 16px; }
+        .card { background: var(--blanco-puro); padding: 30px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
-        .btn-primary { background: var(--turquesa-suave); color: var(--blanco-puro); padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 20px; }
-        
-        footer { padding: 40px; text-align: center; color: var(--texto-secundario); font-size: 14px; border-top: 1px solid #E2E8F0; margin-top: 40px; }
+        footer { background: #00142E; color: white; padding: 60px 10%; text-align: center; }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="logo.png" alt="Logo" style="height: 40px;">
+        <img src="logo.png" style="height: 40px;">
         <nav>
             <a href="index.html">Inicio</a>
             <a href="nosotros.html" style="color: var(--turquesa-suave);">Nosotros</a>
             <a href="cenit.html">CÉNIT</a>
             <a href="lineas.html">Líneas</a>
             <a href="comunidad.html">Comunidad</a>
+            <a href="ruta.html" class="btn-cta">Contáctanos</a>
         </nav>
-        <a href="ruta.html" class="btn-cta">Diseñemos su Ruta</a>
     </header>
 
-    <section>
-        <h1>Liderazgo que conecta.<br>Redes que transforman.</h1>
-        <p style="font-size: 1.1rem;">Somos una organización de consejería estratégica que acompaña a instituciones educativas a fortalecer su dirección, optimizar procesos y consolidar equipos para lograr un crecimiento sostenible.</p>
+    <section class="hero-nosotros">
+        <div>
+            <h1>Consejería que acompaña y conecta.</h1>
+            <p>Somos un equipo de profesionales con experiencia en educación, gestión organizacional y desarrollo institucional. Creemos en el poder de las conexiones para transformar organizaciones y comunidades.</p>
+        </div>
+        <div class="hero-img" style="background-image: url('tu-foto-equipo.jpg');"></div>
     </section>
 
-    <section style="background: var(--blanco-puro);">
-        <h2 style="text-align: center;">Nuestra Convicción</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto;">Creemos en la coherencia entre propósito, personas y procesos. Cuando estas conexiones se debilitan, las organizaciones pierden rumbo. En RedConecta, trabajamos para fortalecerlas y devolver el enfoque a la misión institucional.</p>
-    </section>
-
-    <section>
-        <h2 style="text-align: center;">Consejería que acompaña</h2>
+    <section class="seccion">
+        <h2>Consejería que acompaña</h2>
         <div class="grid-4">
-            <div class="card"><i class="fa-solid fa-ear-listen"></i><h4>Escuchamos</h4><p>Comprendemos tu realidad antes de proponer.</p></div>
-            <div class="card"><i class="fa-solid fa-puzzle-piece"></i><h4>Construimos</h4><p>Integramos tu experiencia con nuestro método.</p></div>
-            <div class="card"><i class="fa-solid fa-handshake"></i><h4>Acompañamos</h4><p>Convertimos ideas en acciones concretas.</p></div>
-            <div class="card"><i class="fa-solid fa-graduation-cap"></i><h4>Generamos capacidad</h4><p>Dejamos aprendizaje para la autonomía.</p></div>
+            <div class="card"><i class="fa-solid fa-ear-listen" style="color:var(--turquesa-suave)"></i><h4>Escuchamos</h4><p>Comprendemos tu realidad antes de proponer.</p></div>
+            <div class="card"><i class="fa-solid fa-puzzle-piece" style="color:var(--turquesa-suave)"></i><h4>Construimos</h4><p>Integramos tu experiencia con nuestro método.</p></div>
+            <div class="card"><i class="fa-solid fa-handshake" style="color:var(--turquesa-suave)"></i><h4>Acompañamos</h4><p>Convertimos ideas en acciones concretas.</p></div>
+            <div class="card"><i class="fa-solid fa-graduation-cap" style="color:var(--turquesa-suave)"></i><h4>Generamos capacidad</h4><p>Dejamos aprendizaje para la autonomía.</p></div>
         </div>
     </section>
 
-    <section style="text-align: center; background: var(--azul-profundo); color: white; border-radius: 20px; margin: 0 10% 80px 10%;">
-        <h2 style="color: white;">Nuestro modelo: CÉNIT</h2>
-        <p style="color: #CBD5E1; max-width: 600px; margin: 0 auto 20px auto;">Un modelo de gestión que conecta propósito, personas, procesos y comunidad. La ruta para transformar la mejora continua en resultados sostenibles.</p>
-        <a href="ruta.html" class="btn-primary" style="background: var(--turquesa-suave);">Agendar Consejería</a>
+    <section class="principios">
+        <h2>Nuestros Principios</h2>
+        <div class="grid-principios">
+            <div class="principio-item"><i class="fa-solid fa-star"></i><p>Propósito</p></div>
+            <div class="principio-item"><i class="fa-solid fa-handshake"></i><p>Integridad</p></div>
+            <div class="principio-item"><i class="fa-solid fa-users"></i><p>Colaboración</p></div>
+            <div class="principio-item"><i class="fa-solid fa-lightbulb"></i><p>Innovación</p></div>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2026 RedConecta. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>
