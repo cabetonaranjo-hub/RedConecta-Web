@@ -4,35 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Líneas de Fortalecimiento | RedConecta</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --blanco: #FFFFFF; --gris-medio: #b0c4d9; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background-color: var(--azul-osc); color: var(--gris-medio); padding-top: 70px; line-height: 1.6; font-size: 15px; }
-        
-        /* HEADER UNIFICADO */
-        header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
-        nav { display: flex; gap: 20px; }
-        nav a { color: var(--azul-inst); font-size: 13px; font-weight: 600; text-decoration: none; transition: 0.3s; }
-        nav a:hover { color: var(--turq); }
-        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
+        :root {
+            --azul-profundo: #002D62;
+            --turquesa-suave: #008C95;
+            --blanco-puro: #FFFFFF;
+            --gris-fondo: #F4F7F9;
+            --texto-principal: #334155;
+            --texto-secundario: #64748B;
+        }
 
-        section { padding: 60px 5%; max-width: 900px; margin: 0 auto; }
-        h1 { color: var(--blanco); font-size: 32px; margin-bottom: 15px; }
-        h2 { color: var(--blanco); font-size: 22px; margin-bottom: 15px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--gris-fondo); color: var(--texto-principal); font-family: 'Montserrat', sans-serif; line-height: 1.8; font-size: 16px; padding-top: 90px; }
+
+        /* HEADER */
+        header { background: var(--blanco-puro); padding: 20px 10%; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
+        nav { display: flex; gap: 30px; }
+        nav a { color: var(--azul-profundo); font-size: 14px; font-weight: 600; text-decoration: none; }
+        .btn-cta { background: var(--azul-profundo); color: var(--blanco-puro); padding: 10px 25px; border-radius: 50px; font-size: 13px; font-weight: 700; text-decoration: none; }
+
+        /* SECCIONES */
+        section { padding: 80px 10%; max-width: 1100px; margin: 0 auto; }
+        h1, h2 { color: var(--azul-profundo); font-weight: 800; margin-bottom: 20px; }
         
-        .hero { text-align: center; padding: 80px 5%; }
-        
+        /* GRID DE LÍNEAS */
         .grid-lineas { display: grid; gap: 30px; margin-top: 40px; }
-        .card { background: var(--azul-inst); padding: 30px; border-radius: 8px; border-left: 6px solid var(--turq); }
-        .card h3 { color: var(--blanco); margin-bottom: 10px; font-size: 20px; }
-        .btn-ver-mas { display: inline-block; background: var(--turq); color: var(--blanco); padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: 700; margin-top: 15px; }
+        .card { background: var(--blanco-puro); padding: 50px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; }
+        .card h3 { color: var(--azul-profundo); margin-bottom: 15px; font-size: 22px; }
+        .card p { margin-bottom: 20px; color: var(--texto-secundario); }
+        .btn-ver-mas { display: inline-block; background: var(--turquesa-suave); color: var(--blanco-puro); padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px; }
 
-        .consejería { background: var(--azul-inst); border-radius: 12px; padding: 40px; text-align: center; }
+        /* CONSEJERÍA */
+        .consejería { background: var(--azul-profundo); color: var(--blanco-puro); border-radius: 20px; text-align: center; }
+        .consejería h2 { color: var(--blanco-puro); }
+        .consejería p { color: #CBD5E1; }
         
-        .btn-primary { display: inline-block; background: var(--turq); color: var(--blanco); padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
-        footer { background-color: #00142E; padding: 30px; text-align: center; color: var(--gris-medio); font-size: 13px; margin-top: 40px; }
+        .btn-primary { background: var(--turquesa-suave); color: var(--blanco-puro); padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 20px; }
+        footer { padding: 40px; text-align: center; color: var(--texto-secundario); font-size: 14px; border-top: 1px solid #E2E8F0; margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -43,53 +52,51 @@
             <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
             <a href="cenit.html">CÉNIT</a>
-            <a href="lineas.html" style="color: var(--turq);">Líneas de Fortalecimiento</a>
-            <a href="comunidad.html">Red y Comunidad</a>
+            <a href="lineas.html" style="color: var(--turquesa-suave);">Líneas</a>
+            <a href="comunidad.html">Comunidad</a>
         </nav>
         <a href="ruta.html" class="btn-cta">Diseñemos su Ruta</a>
     </header>
 
-    <section class="hero">
-        <h1>LÍNEAS DE FORTALECIMIENTO</h1>
+    <section>
+        <h1>Líneas de Fortalecimiento</h1>
         <p>Capacidades para crecer con claridad, coherencia y sostenibilidad.</p>
-    </section>
-
-    <section style="padding-top: 0;">
-        <p>A través del Modelo CÉNIT, acompañamos a las organizaciones a fortalecer capacidades estratégicas. Nuestras líneas no buscan cambios aislados, sino resultados sostenibles.</p>
+        <p style="margin-top: 20px;">A través del Modelo CÉNIT, acompañamos a las organizaciones a fortalecer capacidades estratégicas. Nuestras líneas no buscan cambios aislados, sino resultados sostenibles.</p>
     </section>
 
     <section class="grid-lineas" style="padding-top: 0;">
         <div class="card">
             <h3>Dirección Estratégica</h3>
             <p><strong>Claridad para decidir. Coherencia para avanzar.</strong></p>
-            <p style="margin: 15px 0;">Consolidamos la identidad institucional y fortalecemos la visión de futuro.</p>
+            <p>Consolidamos la identidad institucional y fortalecemos la visión de futuro.</p>
             <a href="direccion.html" class="btn-ver-mas">Ver detalle</a>
         </div>
         <div class="card">
             <h3>Desarrollo Organizacional</h3>
             <p><strong>Fortalecer las capacidades que generan valor.</strong></p>
-            <p style="margin: 15px 0;">Desarrollamos los procesos, liderazgo y prácticas institucionales que generan valor articulado.</p>
+            <p>Desarrollamos los procesos, liderazgo y prácticas institucionales que generan valor articulado.</p>
             <a href="desarrollo.html" class="btn-ver-mas">Ver detalle</a>
         </div>
         <div class="card">
             <h3>Optimización Operativa</h3>
             <p><strong>Más tiempo para liderar.</strong></p>
-            <p style="margin: 15px 0;">Simplificamos procesos para reducir la carga operativa y facilitar la toma de decisiones con datos.</p>
+            <p>Simplificamos procesos para reducir la carga operativa y facilitar la toma de decisiones con datos.</p>
             <a href="optimizacion.html" class="btn-ver-mas">Ver detalle</a>
         </div>
     </section>
 
     <section class="consejería">
-        <i class="fa-solid fa-comments" style="font-size: 40px; color: var(--turq); margin-bottom: 20px;"></i>
-        <h2>CONSEJERÍA QUE ACOMPAÑA</h2>
+        <h2>Consejería que acompaña</h2>
         <p>No creemos en soluciones genéricas. Comprendemos tu realidad, identificamos oportunidades y construimos rutas de crecimiento a la medida. Tú conoces tu organización, nosotros aportamos el método.</p>
     </section>
 
     <section style="text-align: center;">
-        <h2>"Las organizaciones crecen cuando sus conexiones se fortalecen."</h2>
+        <h2 style="font-size: 28px;">"Las organizaciones crecen cuando sus conexiones se fortalecen."</h2>
         <a href="ruta.html" class="btn-primary">Agendar una conversación</a>
     </section>
 
-    <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados.</p></footer>
+    <footer>
+        <p>&copy; 2026 RedConecta. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
