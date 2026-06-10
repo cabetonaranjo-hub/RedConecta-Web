@@ -4,33 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dirección Estratégica | RedConecta</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --gris-medio: #D9E1E8; --blanco: #FFFFFF; }
+        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --blanco: #FFFFFF; --gris-medio: #D9E1E8; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background-color: var(--azul-osc); color: var(--gris-medio); padding-top: 70px; }
 
-        /* HEADER UNIFICADO */
+        /* HEADER */
         header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
-        nav { display: flex; gap: 20px; }
-        nav a { color: var(--azul-inst); font-size: 13px; font-weight: 600; text-decoration: none; }
-        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
+        nav { display: flex; gap: 15px; }
+        nav a { color: var(--azul-inst); font-size: 12px; font-weight: 600; text-decoration: none; }
+        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none; }
 
-        section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 30px; color: var(--blanco); }
-        .section-title span { color: var(--turq); }
-
-        .obj-box { background: linear-gradient(135deg, var(--azul-inst) 0%, #00142E 100%); border-left: 5px solid var(--turq); padding: 40px; border-radius: 0 16px 16px 0; margin-bottom: 50px; }
-        .obj-box p { font-size: 18px; font-weight: 500; color: var(--blanco); line-height: 1.6; }
-
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .service-card { background-color: var(--azul-inst); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
-        .service-card:hover { border-color: var(--turq); transform: translateY(-5px); }
-        .service-card h3 { font-size: 17px; color: var(--blanco); margin-bottom: 12px; }
+        section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; }
+        h1, h2 { color: var(--blanco); margin-bottom: 20px; }
         
-        footer { background-color: #00142E; padding: 40px 5%; text-align: center; color: var(--gris-medio); font-size: 14px; margin-top: 50px; }
+        /* HERO */
+        .hero { text-align: center; }
+        
+        /* TARJETAS DE PROGRESIÓN */
+        .grid-progresion { display: grid; gap: 30px; margin-top: 40px; }
+        .card-prog { background: var(--azul-inst); padding: 40px; border-radius: 12px; border-left: 10px solid var(--turq); }
+        .check-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0; }
+        .check-list li::before { content: '✓ '; color: var(--turq); font-weight: bold; }
+
+        /* RESULTADOS Y CONSEJERÍA */
+        .grid-resultados { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .box-res { background: var(--azul-inst); padding: 20px; border-radius: 8px; text-align: center; }
+        
+        .btn-primary { display: inline-block; background: var(--turq); color: var(--blanco); padding: 14px 28px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
+        .btn-secondary { display: inline-block; background: transparent; border: 2px solid var(--turq); color: var(--turq); padding: 12px 26px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
+        footer { background-color: #00142E; padding: 30px; text-align: center; color: var(--gris-medio); font-size: 13px; margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -39,37 +44,72 @@
         <img src="logo.png" alt="Logo" style="height: 40px;">
         <nav>
             <a href="index.html">Home</a>
-            <a href="direccion.html">Dirección</a>
-            <a href="desarrollo.html">Desarrollo</a>
-            <a href="optimizacion.html">Optimización</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="lineas.html" style="color: var(--turq);">Líneas de Fortalecimiento</a>
             <a href="comunidad.html">Comunidad</a>
         </nav>
-        <a href="ruta.html" class="btn-cta">Agendar Consejería</a>
+        <a href="ruta.html" class="btn-cta">Agendar</a>
     </header>
 
-    <section>
-        <h1 class="section-title">Dirección <span>Estratégica</span></h1>
-        <div class="obj-box">
-            <p>Acompañamos a las organizaciones en la consolidación de sus estructuras de gobierno, planes estratégicos (PMI) y diagnóstico operativo para asegurar la coherencia institucional.</p>
+    <section class="hero">
+        <h1>DIRECCIÓN ESTRATÉGICA</h1>
+        <p style="font-size: 20px; color: var(--turq); margin-bottom: 20px;">Claridad para decidir. Coherencia para avanzar.</p>
+        <p>Acompañamos procesos de fortalecimiento estratégico que permiten consolidar la identidad institucional, orientar la toma de decisiones y proyectar el crecimiento de manera sostenible.</p>
+        <div style="margin-top: 30px;">
+            <a href="ruta.html" class="btn-primary">Agendar una conversación</a>
+            <a href="contacto.html" class="btn-secondary">Solicitar información</a>
         </div>
+    </section>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <h3><i class="fa-solid fa-chart-line" style="color:var(--turq); margin-right:10px;"></i> Planes Estratégicos (PMI)</h3>
-                <p>Estructuración de rutas de mejoramiento institucional o empresarial con metas claras, KPIs de seguimiento y cronogramas de ejecución efectivos.</p>
+    <section>
+        <h2>EL DESAFÍO: Cuando la estrategia pierde conexión</h2>
+        <p>La falta de claridad estratégica suele generar: procesos desarticulados, pérdida de enfoque, dificultades de posicionamiento y desgaste institucional.</p>
+    </section>
+
+    <section>
+        <h2>PROGRAMAS DE ACOMPAÑAMIENTO</h2>
+        <div class="grid-progresion">
+            <div class="card-prog">
+                <h3>1. Programa de Direccionamiento Estratégico</h3>
+                <p>Define el rumbo: Alineamos propósito, visión y objetivos.</p>
+                <ul class="check-list"><li>Horizonte institucional</li><li>Planeación estratégica</li><li>Sistemas de gestión</li><li>Objetivos SMART</li></ul>
+                <p><strong>Resultado:</strong> Claridad total sobre quién es la organización y hacia dónde va.</p>
             </div>
-            <div class="service-card">
-                <h3><i class="fa-solid fa-users-gear" style="color:var(--turq); margin-right:10px;"></i> Gobierno Corporativo</h3>
-                <p>Diseño de estructuras organizacionales, organigramas funcionales y definición de roles que eliminan cuellos de botella operativos.</p>
+            <div class="card-prog">
+                <h3>2. Programa de Posicionamiento y Sostenibilidad</h3>
+                <p>Proyecta el valor: Comunicamos y diferenciamos.</p>
+                <ul class="check-list"><li>Propuesta de valor</li><li>Comunicación estratégica</li><li>Marketing institucional</li><li>Sostenibilidad</li></ul>
+                <p><strong>Resultado:</strong> Mayor capacidad para atraer, fidelizar y generar confianza.</p>
             </div>
-            <div class="service-card">
-                <h3><i class="fa-solid fa-magnifying-glass-chart" style="color:var(--turq); margin-right:10px;"></i> Diagnóstico Operativo</h3>
-                <p>Evaluación integral de la organización para identificar brechas entre la visión estratégica y la realidad cotidiana del equipo.</p>
+            <div class="card-prog">
+                <h3>3. Programa de Gestión por Indicadores</h3>
+                <p>Mide y ajusta: Decisiones basadas en datos.</p>
+                <ul class="check-list"><li>Tableros de control</li><li>Seguimiento estratégico</li><li>Evaluación de resultados</li><li>Gestión de datos</li></ul>
+                <p><strong>Resultado:</strong> Organizaciones que miden, aprenden y mejoran continuamente.</p>
             </div>
         </div>
     </section>
 
-    <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados.</p></footer>
+    <section style="background: var(--azul-inst);">
+        <h2>NUESTRA FORMA DE ACOMPAÑAR</h2>
+        <p>Consejería que acompaña. No imponemos modelos; construimos en conjunto integrando tu conocimiento interno con nuestra mirada estratégica. Juntos construimos el camino.</p>
+    </section>
 
+    <section>
+        <h2>RESULTADOS QUE BUSCAMOS</h2>
+        <div class="grid-resultados">
+            <div class="box-res"><h4>Claridad Estratégica</h4></div>
+            <div class="box-res"><h4>Gestión Coherente</h4></div>
+            <div class="box-res"><h4>Seguimiento Efectivo</h4></div>
+            <div class="box-res"><h4>Sostenibilidad</h4></div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <h2>La estrategia cobra valor cuando se convierte en acción.</h2>
+        <a href="ruta.html" class="btn-primary">Agendar una conversación</a>
+    </section>
+
+    <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados.</p></footer>
 </body>
 </html>

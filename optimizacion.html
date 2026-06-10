@@ -4,32 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimización Operativa | RedConecta</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --turq-claro: #14AEB7; --gris-claro: #F5F7FA; --gris-medio: #D9E1E8; --blanco: #FFFFFF; }
+        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --blanco: #FFFFFF; --gris-medio: #D9E1E8; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background-color: var(--azul-osc); color: var(--gris-claro); padding-top: 80px; }
+        body { background-color: var(--azul-osc); color: var(--gris-medio); padding-top: 70px; }
         
-        /* HEADER UNIFICADO */
         header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
-        nav { display: flex; gap: 20px; }
-        nav a { color: var(--azul-inst); font-size: 13px; font-weight: 600; text-decoration: none; }
-        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
+        nav { display: flex; gap: 15px; }
+        nav a { color: var(--azul-inst); font-size: 12px; font-weight: 600; text-decoration: none; }
+        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none; }
 
-        section { padding: 50px 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 30px; color: var(--blanco); }
-        .section-title span { color: var(--turq); }
-
-        .obj-box { background: linear-gradient(135deg, var(--azul-inst) 0%, #00142E 100%); border-left: 5px solid var(--turq); padding: 30px; border-radius: 0 10px 10px 0; margin-bottom: 40px; }
-        .obj-box p { font-size: 15px; color: var(--gris-claro); line-height: 1.7; }
-
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .tool-card { background-color: var(--azul-inst); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
-        .tool-card h3 { color: var(--blanco); font-size: 16px; margin-bottom: 10px; }
-        .tool-card p { color: var(--gris-medio); font-size: 13px; line-height: 1.6; }
+        section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; }
+        h1, h2 { color: var(--blanco); margin-bottom: 20px; }
         
+        .hero { text-align: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { background: var(--azul-inst); padding: 30px; border-radius: 8px; border-top: 4px solid var(--turq); }
+        .check-list { list-style: none; margin: 15px 0; }
+        .check-list li::before { content: '✔ '; color: var(--turq); font-weight: bold; }
+
+        .btn-primary { display: inline-block; background: var(--turq); color: var(--blanco); padding: 14px 28px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
+        .btn-secondary { display: inline-block; background: transparent; border: 2px solid var(--turq); color: var(--turq); padding: 12px 26px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
         footer { background-color: #00142E; padding: 30px; text-align: center; color: var(--gris-medio); font-size: 13px; margin-top: 40px; }
     </style>
 </head>
@@ -39,37 +36,78 @@
         <img src="logo.png" alt="Logo" style="height: 40px;">
         <nav>
             <a href="index.html">Home</a>
-            <a href="direccion.html">Dirección</a>
-            <a href="desarrollo.html">Desarrollo</a>
-            <a href="optimizacion.html">Optimización</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="lineas.html" style="color: var(--turq);">Líneas de Fortalecimiento</a>
             <a href="comunidad.html">Comunidad</a>
         </nav>
-        <a href="ruta.html" class="btn-cta">Agendar Consejería</a>
+        <a href="ruta.html" class="btn-cta">Agendar</a>
     </header>
 
-    <section>
-        <h1 class="section-title">Línea de <span>Optimización Operativa</span></h1>
-        <div class="obj-box">
-            <p>Implementamos herramientas tecnológicas y sistemas de automatización a la medida, bajo un enfoque <strong>low-cost de alta eficiencia</strong>, diseñados para responder a las necesidades críticas de empresas y colegios. Maximizamos la productividad institucional sin inversiones restrictivas.</p>
+    <section class="hero">
+        <h1>OPTIMIZACIÓN OPERATIVA</h1>
+        <p style="font-size: 18px; color: var(--turq); margin-bottom: 20px;">Liberar tiempo para lo que realmente genera valor.</p>
+        <p>Acompañamos procesos orientados a simplificar, organizar y fortalecer la gestión mediante soluciones prácticas que aumentan la eficiencia y facilitan la toma de decisiones.</p>
+        <div style="margin-top: 30px;">
+            <a href="ruta.html" class="btn-primary">Agendar una conversación</a>
+            <a href="contacto.html" class="btn-secondary">Solicitar información</a>
         </div>
+    </section>
 
-        <div class="tools-grid">
-            <div class="tool-card">
-                <h3>SIGED (Gestión Educativa)</h3>
-                <p>Automatización de notas, asistencia y reportes académicos para liberar tiempo administrativo en instituciones.</p>
+    <section style="background: var(--azul-inst);">
+        <h2>EL DESAFÍO: Cuando la operación consume la capacidad de crecer</h2>
+        <p>La sobrecarga operativa es un obstáculo clave. Procesos manuales, tareas repetitivas y sistemas dispersos generan desgaste y reducen la capacidad de tomar decisiones oportunas.</p>
+        <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="card">✔ Procesos manuales excesivos</div>
+            <div class="card">✔ Tareas repetitivas</div>
+            <div class="card">✔ Información dispersa</div>
+            <div class="card">✔ Poca trazabilidad</div>
+            <div class="card">✔ Duplicidad de esfuerzos</div>
+            <div class="card">✔ Información incompleta</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>PROGRAMAS DE ACOMPAÑAMIENTO</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Optimización de Procesos</h3>
+                <p>Simplificar para avanzar. Eliminamos actividades innecesarias.</p>
+                <ul class="check-list"><li>Gestión de procesos</li><li>Eficiencia operativa</li><li>Estandarización</li></ul>
             </div>
-            <div class="tool-card">
-                <h3>SGTH Automatizado</h3>
-                <p>Gestión de procesos de selección, seguimiento disciplinario y trazabilidad documental automatizada.</p>
+            <div class="card">
+                <h3>Automatización Inteligente</h3>
+                <p>Menos tareas repetitivas. Más tiempo para liderar.</p>
+                <ul class="check-list"><li>Automatización de procesos</li><li>Gestión documental</li><li>Productividad</li></ul>
             </div>
-            <div class="tool-card">
-                <h3>Lead Gen & Web</h3>
-                <p>Sistemas de captación de clientes mediante formularios integrados y sitios web de alto impacto a bajo costo.</p>
+            <div class="card">
+                <h3>Información para la Toma de Decisiones</h3>
+                <p>Convertir datos en decisiones con tableros de control.</p>
+                <ul class="check-list"><li>Indicadores de gestión</li><li>Análisis de información</li><li>Cultura de datos</li></ul>
             </div>
         </div>
     </section>
 
-    <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados.</p></footer>
+    <section style="background: var(--azul-inst); border-radius: 12px; padding: 40px; text-align: center;">
+        <h2>NUESTRA FORMA DE ACOMPAÑAR</h2>
+        <p>Creemos en soluciones construidas en conjunto. Escuchamos antes de proponer, fortalecemos capacidades y nos involucramos hasta ver los resultados. Ustedes conocen su organización, nosotros aportamos el método.</p>
+    </section>
 
+    <section>
+        <h2>RESULTADOS QUE BUSCAMOS</h2>
+        <p>Fortalecer la gestión para liberar capacidad organizacional:</p>
+        <div class="grid-3">
+            <div class="card"><h3>Eficiencia</h3><p>Procesos optimizados y equipos menos sobrecargados.</p></div>
+            <div class="card"><h3>Claridad</h3><p>Información confiable para decidir.</p></div>
+            <div class="card"><h3>Innovación</h3><p>Condiciones para el crecimiento.</p></div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <h2>"La tecnología tiene sentido cuando libera tiempo para las personas."</h2>
+        <a href="contacto.html" class="btn-secondary">Solicitar información</a>
+        <a href="ruta.html" class="btn-primary">Agendar una conversación</a>
+    </section>
+
+    <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados.</p></footer>
 </body>
 </html>

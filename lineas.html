@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Líneas de Fortalecimiento | RedConecta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --blanco: #FFFFFF; --gris-medio: #D9E1E8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--azul-osc); color: var(--gris-medio); padding-top: 70px; }
+        
+        header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
+        nav { display: flex; gap: 15px; }
+        nav a { color: var(--azul-inst); font-size: 12px; font-weight: 600; text-decoration: none; }
+        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none; }
+
+        section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; }
+        h1, h2 { color: var(--blanco); margin-bottom: 20px; }
+        
+        /* HERO */
+        .hero { text-align: center; }
+        .hero h1 { font-size: 40px; }
+        
+        /* GRID DE LÍNEAS */
+        .grid-lineas { display: grid; gap: 30px; margin-top: 40px; }
+        .card { background: var(--azul-inst); padding: 40px; border-radius: 12px; border-left: 6px solid var(--turq); }
+        .btn-ver-mas { display: inline-block; background: var(--turq); color: var(--blanco); padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: 700; margin-top: 20px; }
+
+        /* SECCIÓN CONSEJERÍA */
+        .consejería { background: var(--azul-inst); border-radius: 12px; padding: 40px; text-align: center; }
+        
+        .footer-cta { text-align: center; padding: 40px 5%; }
+        .btn-primary { display: inline-block; background: var(--turq); color: var(--blanco); padding: 14px 28px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
+        .btn-secondary { display: inline-block; background: transparent; border: 2px solid var(--turq); color: var(--turq); padding: 12px 26px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Logo" style="height: 40px;">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="lineas.html" style="color: var(--turq);">Líneas de Fortalecimiento</a>
+            <a href="comunidad.html">Comunidad y Networking</a>
+        </nav>
+        <a href="ruta.html" class="btn-cta">Agendar</a>
+    </header>
+
+    <section class="hero">
+        <h1>LÍNEAS DE FORTALECIMIENTO</h1>
+        <p>Capacidades para crecer con claridad, coherencia y sostenibilidad.</p>
+    </section>
+
+    <section>
+        <p>A través del Modelo CÉNIT, acompañamos a las organizaciones en el fortalecimiento de capacidades que les permiten actuar con mayor claridad estratégica, desarrollar su potencial organizacional y optimizar sus operaciones. Nuestras líneas no buscan cambios aislados, sino capacidades sostenibles.</p>
+    </section>
+
+    <section class="grid-lineas">
+        <div class="card">
+            <h2>Dirección Estratégica</h2>
+            <p><strong>Claridad para decidir. Coherencia para avanzar.</strong></p>
+            <p style="margin: 15px 0;">Consolidamos la identidad institucional, fortalecemos la visión de futuro y traducimos el propósito organizacional en acciones coherentes.</p>
+            <a href="direccion.html" class="btn-ver-mas">Conocer más</a>
+        </div>
+        <div class="card">
+            <h2>Desarrollo Organizacional</h2>
+            <p><strong>Fortalecer las capacidades que generan valor.</strong></p>
+            <p style="margin: 15px 0;">Desarrollamos los procesos, liderazgo y prácticas institucionales que hacen posible la generación de valor de manera articulada.</p>
+            <a href="desarrollo_organizacional.html" class="btn-ver-mas">Conocer más</a>
+        </div>
+        <div class="card">
+            <h2>Optimización Operativa</h2>
+            <p><strong>Más tiempo para liderar. Más capacidad para crecer.</strong></p>
+            <p style="margin: 15px 0;">Simplificamos y automatizamos procesos para reducir la carga operativa y facilitar la toma de decisiones basada en datos.</p>
+            <a href="optimizacion.html" class="btn-ver-mas">Conocer más</a>
+        </div>
+    </section>
+
+    <section class="consejería">
+        <i class="fa-solid fa-comments" style="font-size: 40px; color: var(--turq); margin-bottom: 20px;"></i>
+        <h2>CONSEJERÍA QUE ACOMPAÑA</h2>
+        <p>No creemos en soluciones genéricas. Comprendemos la realidad de cada organización, identificamos oportunidades y acompañamos la construcción de rutas que convierten los desafíos en oportunidades de crecimiento. Ustedes conocen su organización, nosotros aportamos el método.</p>
+    </section>
+
+    <section class="footer-cta">
+        <h2>"Las organizaciones crecen cuando sus conexiones se fortalecen."</h2>
+        <a href="ruta.html" class="btn-primary">Agendar una conversación</a>
+        <a href="contacto.html" class="btn-secondary">Solicitar información</a>
+    </section>
+
+</body>
+</html>

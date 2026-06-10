@@ -3,33 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedConecta | Liderazgo que conecta</title>
+    <title>RedConecta | Liderazgo que Conecta</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --blanco: #FFFFFF; --gris-medio: #D9E1E8; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background-color: var(--azul-osc); color: var(--gris-medio); padding-top: 70px; }
+        body { background-color: var(--azul-osc); color: var(--blanco); padding-top: 70px; }
 
-        /* HEADER UNIFICADO */
         header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
         nav { display: flex; gap: 15px; }
         nav a { color: var(--azul-inst); font-size: 12px; font-weight: 600; text-decoration: none; }
-        .btn-header { background-color: var(--turq); color: var(--blanco); padding: 8px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none; }
+        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none; }
 
-        /* HERO SECTION */
         .hero { padding: 100px 5%; text-align: center; max-width: 900px; margin: 0 auto; }
-        .hero h1 { font-size: 42px; color: var(--blanco); margin-bottom: 20px; line-height: 1.2; }
-        .hero h2 { font-size: 18px; color: var(--gris-medio); margin-bottom: 20px; font-weight: 400; line-height: 1.6; }
-        .hero p { font-size: 16px; color: var(--blanco); margin-bottom: 40px; font-weight: 600; }
+        h1 { font-size: 48px; margin-bottom: 20px; }
         
-        /* BOTONES HERO */
-        .btn-container { display: flex; gap: 15px; justify-content: center; }
-        .btn { padding: 12px 24px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 14px; transition: 0.3s; }
+        .grid-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 5%; max-width: 1100px; margin: 0 auto; }
+        .card { background: var(--azul-inst); padding: 40px; border-radius: 12px; border-top: 6px solid var(--turq); text-align: center; }
+        
+        .btn-container { display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 14px; }
         .btn-primary { background-color: var(--turq); color: var(--blanco); }
         .btn-secondary { background-color: transparent; border: 2px solid var(--turq); color: var(--turq); }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
-
-        footer { background-color: #00142E; padding: 30px; text-align: center; color: var(--gris-medio); font-size: 13px; margin-top: 50px; }
+        
+        footer { background-color: #00142E; padding: 40px; text-align: center; color: var(--gris-medio); }
     </style>
 </head>
 <body>
@@ -37,28 +34,44 @@
     <header>
         <img src="logo.png" alt="Logo" style="height: 40px;">
         <nav>
+            <a href="index.html" style="color: var(--turq);">Home</a>
             <a href="nosotros.html">Nosotros</a>
-            <a href="direccion.html">Dirección Estratégica</a>
-            <a href="desarrollo.html">Desarrollo Misional</a>
-            <a href="optimizacion.html">Optimización Operativa</a>
-            <a href="comunidad.html">Comunidad y Networking</a>
+            <a href="lineas.html">Líneas de Fortalecimiento</a>
+            <a href="comunidad.html">Red y Comunidad</a>
         </nav>
-        <a href="ruta.html" class="btn-header">Agendar</a>
+        <a href="ruta.html" class="btn-cta">Agendar</a>
     </header>
 
     <section class="hero">
-        <h1>Liderazgo que conecta.<br>Redes que transforman.</h1>
-        <h2>Acompañamos a organizaciones e instituciones educativas en el fortalecimiento de su dirección estratégica, el desarrollo de sus capacidades, la optimización de sus procesos y la construcción de comunidades de crecimiento sostenibles.</h2>
-        <p>Conectamos propósito, personas, procesos y comunidad para impulsar organizaciones más coherentes, eficientes y preparadas para los desafíos del futuro.</p>
-        
+        <h1>Liderazgo que Conecta.<br>Redes que Transforman.</h1>
+        <p style="font-size: 18px; color: var(--gris-medio);">Acompañamos a organizaciones e instituciones educativas en el fortalecimiento de su dirección estratégica, el desarrollo de sus capacidades y la construcción de comunidades de crecimiento sostenibles.</p>
         <div class="btn-container">
-            <a href="nosotros.html" class="btn btn-secondary">Nuestra propuesta</a>
-            <a href="comunidad.html" class="btn btn-secondary">Únete a nuestra red</a>
-            <a href="ruta.html" class="btn btn-primary">Diseñemos tu ruta</a>
+            <a href="lineas.html" class="btn btn-primary">Conocer nuestras líneas</a>
+            <a href="comunidad.html" class="btn btn-secondary">Unirme a la Red</a>
         </div>
     </section>
 
-    <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados.</p></footer>
+    <section class="grid-home">
+        <div class="card">
+            <h3>Dirección Estratégica</h3>
+            <p style="margin: 15px 0;">Claridad para decidir y coherencia para avanzar.</p>
+            <a href="direccion.html" style="color: var(--turq);">Ver detalle</a>
+        </div>
+        <div class="card">
+            <h3>Desarrollo Organizacional</h3>
+            <p style="margin: 15px 0;">Fortalecer las capacidades que generan valor.</p>
+            <a href="desarrollo_organizacional.html" style="color: var(--turq);">Ver detalle</a>
+        </div>
+        <div class="card">
+            <h3>Optimización Operativa</h3>
+            <p style="margin: 15px 0;">Liberar tiempo para liderar e innovar.</p>
+            <a href="optimizacion.html" style="color: var(--turq);">Ver detalle</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 RedConecta. Las organizaciones crecen cuando sus conexiones se fortalecen.</p>
+    </footer>
 
 </body>
 </html>
