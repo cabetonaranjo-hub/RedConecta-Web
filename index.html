@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedConecta | Liderazgo que Conecta</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --blanco: #FFFFFF; --gris-medio: #D9E1E8; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background-color: var(--azul-osc); color: var(--blanco); padding-top: 70px; }
+        :root {
+            --azul-profundo: #002D62;
+            --turquesa-suave: #008C95;
+            --blanco-puro: #FFFFFF;
+            --gris-fondo: #F4F7F9;
+            --texto-principal: #334155;
+        }
 
-        /* HEADER UNIFICADO */
-        header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
-        nav { display: flex; gap: 20px; }
-        nav a { color: var(--azul-inst); font-size: 13px; font-weight: 600; text-decoration: none; transition: 0.3s; }
-        nav a:hover { color: var(--turq); }
-        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--gris-fondo); color: var(--texto-principal); font-family: 'Montserrat', sans-serif; line-height: 1.8; font-size: 16px; padding-top: 90px; }
 
-        /* HERO */
-        .hero { padding: 100px 5%; text-align: center; max-width: 900px; margin: 0 auto; }
-        h1 { font-size: 48px; margin-bottom: 20px; }
+        header { background: var(--blanco-puro); padding: 20px 10%; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
+        nav { display: flex; gap: 30px; }
+        nav a { color: var(--azul-profundo); font-size: 14px; font-weight: 600; text-decoration: none; }
         
-        /* GRID DE SERVICIOS */
-        .grid-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 5%; max-width: 1100px; margin: 0 auto; }
-        .card { background: var(--azul-inst); padding: 40px; border-radius: 12px; border-top: 6px solid var(--turq); text-align: center; }
+        .btn-cta { background: var(--azul-profundo); color: var(--blanco-puro); padding: 10px 25px; border-radius: 50px; font-size: 13px; font-weight: 700; text-decoration: none; }
+
+        section { padding: 80px 10%; max-width: 1100px; margin: 0 auto; }
         
-        .btn-container { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
-        .btn { padding: 14px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 14px; }
-        .btn-primary { background-color: var(--turq); color: var(--blanco); }
-        .btn-secondary { background-color: transparent; border: 2px solid var(--turq); color: var(--turq); }
+        .hero { text-align: center; padding-bottom: 40px; }
+        h1 { color: var(--azul-profundo); font-size: 42px; font-weight: 800; margin-bottom: 20px; }
+
+        .grid-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--blanco-puro); padding: 40px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); text-align: center; }
+        .card h3 { color: var(--azul-profundo); margin-bottom: 15px; }
         
-        footer { background-color: #00142E; padding: 40px; text-align: center; color: var(--gris-medio); font-size: 14px; }
+        .btn-primary { background: var(--turquesa-suave); color: var(--blanco-puro); padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 20px; }
+        
+        footer { padding: 40px; text-align: center; color: #64748B; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -41,41 +45,35 @@
             <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
             <a href="cenit.html">CÉNIT</a>
-            <a href="lineas.html">Líneas de Fortalecimiento</a>
-            <a href="comunidad.html">Red y Comunidad</a>
+            <a href="lineas.html">Líneas</a>
+            <a href="comunidad.html">Comunidad</a>
         </nav>
         <a href="ruta.html" class="btn-cta">Diseñemos su Ruta</a>
     </header>
 
     <section class="hero">
         <h1>Liderazgo que Conecta.<br>Redes que Transforman.</h1>
-        <p style="font-size: 18px; color: var(--gris-medio); margin-bottom: 30px;">Acompañamos a organizaciones e instituciones educativas en el fortalecimiento de su dirección estratégica, el desarrollo de sus capacidades y la construcción de comunidades de crecimiento sostenibles.</p>
-        <div class="btn-container">
-            <a href="lineas.html" class="btn btn-primary">Conocer nuestras líneas</a>
-            <a href="comunidad.html" class="btn btn-secondary">Unirme a la Red</a>
-        </div>
+        <p style="max-width: 700px; margin: 0 auto;">Acompañamos instituciones educativas a fortalecer su propósito, optimizar procesos y conectar equipos para un crecimiento sostenible.</p>
+        <a href="lineas.html" class="btn-primary">Ver nuestras líneas de acción</a>
     </section>
 
     <section class="grid-home">
         <div class="card">
             <h3>Dirección Estratégica</h3>
-            <p style="margin: 15px 0;">Claridad para decidir y coherencia para avanzar.</p>
-            <a href="direccion.html" style="color: var(--turq); font-weight: bold;">Ver detalle</a>
+            <p>Claridad para decidir y coherencia para avanzar con visión de futuro.</p>
         </div>
         <div class="card">
             <h3>Desarrollo Organizacional</h3>
-            <p style="margin: 15px 0;">Fortalecer las capacidades que generan valor.</p>
-            <a href="desarrollo_organizacional.html" style="color: var(--turq); font-weight: bold;">Ver detalle</a>
+            <p>Fortalecemos las capacidades humanas y culturales que generan valor.</p>
         </div>
         <div class="card">
             <h3>Optimización Operativa</h3>
-            <p style="margin: 15px 0;">Liberar tiempo para liderar e innovar.</p>
-            <a href="optimizacion.html" style="color: var(--turq); font-weight: bold;">Ver detalle</a>
+            <p>Simplificamos procesos para liberar tiempo y potenciar la gestión.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 RedConecta. Las organizaciones crecen cuando sus conexiones se fortalecen.</p>
+        <p>&copy; 2026 RedConecta. Crecimiento sostenible a través de la conexión.</p>
     </footer>
 
 </body>
