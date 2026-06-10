@@ -10,23 +10,27 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background-color: var(--azul-osc); color: var(--blanco); padding-top: 70px; }
 
+        /* HEADER UNIFICADO */
         header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
-        nav { display: flex; gap: 15px; }
-        nav a { color: var(--azul-inst); font-size: 12px; font-weight: 600; text-decoration: none; }
-        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none; }
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--azul-inst); font-size: 13px; font-weight: 600; text-decoration: none; transition: 0.3s; }
+        nav a:hover { color: var(--turq); }
+        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
 
+        /* HERO */
         .hero { padding: 100px 5%; text-align: center; max-width: 900px; margin: 0 auto; }
         h1 { font-size: 48px; margin-bottom: 20px; }
         
+        /* GRID DE SERVICIOS */
         .grid-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 5%; max-width: 1100px; margin: 0 auto; }
         .card { background: var(--azul-inst); padding: 40px; border-radius: 12px; border-top: 6px solid var(--turq); text-align: center; }
         
-        .btn-container { display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+        .btn-container { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
         .btn { padding: 14px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 14px; }
         .btn-primary { background-color: var(--turq); color: var(--blanco); }
         .btn-secondary { background-color: transparent; border: 2px solid var(--turq); color: var(--turq); }
         
-        footer { background-color: #00142E; padding: 40px; text-align: center; color: var(--gris-medio); }
+        footer { background-color: #00142E; padding: 40px; text-align: center; color: var(--gris-medio); font-size: 14px; }
     </style>
 </head>
 <body>
@@ -34,17 +38,18 @@
     <header>
         <img src="logo.png" alt="Logo" style="height: 40px;">
         <nav>
-            <a href="index.html" style="color: var(--turq);">Home</a>
+            <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
+            <a href="cenit.html">CÉNIT</a>
             <a href="lineas.html">Líneas de Fortalecimiento</a>
             <a href="comunidad.html">Red y Comunidad</a>
         </nav>
-        <a href="ruta.html" class="btn-cta">Agendar</a>
+        <a href="ruta.html" class="btn-cta">Diseñemos su Ruta</a>
     </header>
 
     <section class="hero">
         <h1>Liderazgo que Conecta.<br>Redes que Transforman.</h1>
-        <p style="font-size: 18px; color: var(--gris-medio);">Acompañamos a organizaciones e instituciones educativas en el fortalecimiento de su dirección estratégica, el desarrollo de sus capacidades y la construcción de comunidades de crecimiento sostenibles.</p>
+        <p style="font-size: 18px; color: var(--gris-medio); margin-bottom: 30px;">Acompañamos a organizaciones e instituciones educativas en el fortalecimiento de su dirección estratégica, el desarrollo de sus capacidades y la construcción de comunidades de crecimiento sostenibles.</p>
         <div class="btn-container">
             <a href="lineas.html" class="btn btn-primary">Conocer nuestras líneas</a>
             <a href="comunidad.html" class="btn btn-secondary">Unirme a la Red</a>
@@ -55,17 +60,17 @@
         <div class="card">
             <h3>Dirección Estratégica</h3>
             <p style="margin: 15px 0;">Claridad para decidir y coherencia para avanzar.</p>
-            <a href="direccion.html" style="color: var(--turq);">Ver detalle</a>
+            <a href="direccion.html" style="color: var(--turq); font-weight: bold;">Ver detalle</a>
         </div>
         <div class="card">
             <h3>Desarrollo Organizacional</h3>
             <p style="margin: 15px 0;">Fortalecer las capacidades que generan valor.</p>
-            <a href="desarrollo_organizacional.html" style="color: var(--turq);">Ver detalle</a>
+            <a href="desarrollo_organizacional.html" style="color: var(--turq); font-weight: bold;">Ver detalle</a>
         </div>
         <div class="card">
             <h3>Optimización Operativa</h3>
             <p style="margin: 15px 0;">Liberar tiempo para liderar e innovar.</p>
-            <a href="optimizacion.html" style="color: var(--turq);">Ver detalle</a>
+            <a href="optimizacion.html" style="color: var(--turq); font-weight: bold;">Ver detalle</a>
         </div>
     </section>
 

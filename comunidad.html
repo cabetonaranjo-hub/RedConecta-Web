@@ -7,27 +7,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --blanco: #FFFFFF; --gris-medio: #D9E1E8; }
+        :root { --azul-inst: #002D62; --azul-osc: #001B3D; --turq: #008C95; --blanco: #FFFFFF; --gris-medio: #b0c4d9; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background-color: var(--azul-osc); color: var(--gris-medio); padding-top: 70px; }
+        body { background-color: var(--azul-osc); color: var(--gris-medio); padding-top: 70px; line-height: 1.6; font-size: 15px; }
         
+        /* HEADER UNIFICADO */
         header { width: 100%; height: 70px; background-color: var(--blanco); display: flex; justify-content: space-between; align-items: center; padding: 0 5%; position: fixed; top: 0; z-index: 1000; border-bottom: 2px solid var(--turq); }
-        nav { display: flex; gap: 15px; }
-        nav a { color: var(--azul-inst); font-size: 12px; font-weight: 600; text-decoration: none; }
-        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none; }
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--azul-inst); font-size: 13px; font-weight: 600; text-decoration: none; transition: 0.3s; }
+        nav a:hover { color: var(--turq); }
+        .btn-cta { background-color: var(--turq); color: var(--blanco); padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; }
 
-        section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; }
-        h1, h2 { color: var(--blanco); margin-bottom: 20px; }
+        section { padding: 60px 5%; max-width: 900px; margin: 0 auto; }
+        h1 { color: var(--blanco); font-size: 32px; margin-bottom: 15px; }
+        h2 { color: var(--blanco); font-size: 22px; margin-bottom: 15px; }
         
         .hero { text-align: center; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
-        .card { background: var(--azul-inst); padding: 30px; border-radius: 8px; border-top: 4px solid var(--turq); }
-        .check-list { list-style: none; margin: 15px 0; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { background: var(--azul-inst); padding: 25px; border-radius: 8px; border-top: 4px solid var(--turq); }
+        .card h3 { color: var(--blanco); font-size: 18px; margin-bottom: 10px; }
+        
+        .check-list { list-style: none; margin: 15px 0; font-size: 14px; }
         .check-list li::before { content: '✔ '; color: var(--turq); font-weight: bold; }
 
-        .form-box { background: var(--blanco); padding: 40px; border-radius: 12px; margin-top: 30px; color: var(--azul-osc); text-align: center; }
-        .btn-primary { display: inline-block; background: var(--turq); color: var(--blanco); padding: 14px 28px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
-        .btn-secondary { display: inline-block; background: transparent; border: 2px solid var(--turq); color: var(--turq); padding: 12px 26px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
+        .form-box { background: var(--blanco); padding: 40px; border-radius: 12px; margin-top: 30px; color: var(--azul-osc); }
+        .btn-primary { display: inline-block; background: var(--turq); color: var(--blanco); padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
+        .btn-secondary { display: inline-block; background: transparent; border: 2px solid var(--turq); color: var(--turq); padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 700; margin: 10px; }
         
         footer { background-color: #00142E; padding: 30px; text-align: center; color: var(--gris-medio); font-size: 13px; margin-top: 40px; }
     </style>
@@ -37,18 +42,19 @@
     <header>
         <img src="logo.png" alt="Logo" style="height: 40px;">
         <nav>
-            <a href="index.html">Home</a>
+            <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
+            <a href="cenit.html">CÉNIT</a>
             <a href="lineas.html">Líneas de Fortalecimiento</a>
             <a href="comunidad.html" style="color: var(--turq);">Red y Comunidad</a>
         </nav>
-        <a href="ruta.html" class="btn-cta">Agendar</a>
+        <a href="ruta.html" class="btn-cta">Diseñemos su Ruta</a>
     </header>
 
     <section class="hero">
         <h1>RED Y COMUNIDAD</h1>
-        <p style="font-size: 20px; color: var(--turq); margin-bottom: 20px;">Una red para aprender, colaborar y crecer.</p>
-        <p>Creemos que las organizaciones alcanzan mejores resultados cuando dejan de trabajar de manera aislada y comienzan a construir relaciones de confianza, aprendizaje y colaboración. RedConecta impulsa una comunidad que comparte experiencias y oportunidades para generar mayor impacto.</p>
+        <p style="font-size: 18px; color: var(--turq); margin-bottom: 20px;">Una red para aprender, colaborar y crecer.</p>
+        <p>Creemos que las organizaciones alcanzan mejores resultados cuando dejan de trabajar de manera aislada y construyen relaciones de confianza y aprendizaje.</p>
         <div style="margin-top: 30px;">
             <a href="#unirme" class="btn-primary">Unirme a la Red</a>
             <a href="ruta.html" class="btn-secondary">Agendar una conversación</a>
@@ -57,7 +63,7 @@
 
     <section>
         <h2>¿POR QUÉ UNA RED?</h2>
-        <p>El crecimiento es más sostenible cuando se construye en comunidad. La falta de conexión suele generar aislamiento, duplicidad de esfuerzos y menores capacidades de innovación.</p>
+        <p>El crecimiento es más sostenible cuando se construye en comunidad. La falta de conexión suele generar aislamiento y limita la capacidad de innovación.</p>
         <ul class="check-list">
             <li>Aislamiento institucional</li>
             <li>Duplicación de esfuerzos</li>
@@ -70,22 +76,16 @@
     <section style="background: var(--azul-inst);">
         <h2>NUESTRA VISIÓN: Conectar para transformar</h2>
         <div class="grid-3">
-            <div class="card"><h3>Aprendizaje compartido</h3><p>Compartir experiencias y buenas prácticas.</p></div>
+            <div class="card"><h3>Aprendizaje compartido</h3><p>Intercambio de experiencias y buenas prácticas.</p></div>
             <div class="card"><h3>Networking estratégico</h3><p>Conexión con líderes e instituciones con intereses comunes.</p></div>
-            <div class="card"><h3>Alianzas y colaboración</h3><p>Proyectos, convenios y relaciones de valor mutuo.</p></div>
+            <div class="card"><h3>Alianzas y colaboración</h3><p>Construcción de proyectos y relaciones de valor mutuo.</p></div>
         </div>
     </section>
 
     <section id="unirme" class="form-box">
-        <h2>ÚNETE A LA RED</h2>
-        <p>Hagamos crecer las conexiones que generan valor. Si compartes nuestra visión, te invitamos a ser parte.</p>
+        <h2 style="color: var(--azul-osc); text-align: center;">ÚNETE A LA RED</h2>
+        <p style="text-align: center;">Hagamos crecer las conexiones que generan valor.</p>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZ1ZlwZiEJpNh_KRL1IBbrg199nQRK09vl7i5216NozYdVxw/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-    </section>
-
-    <section class="hero">
-        <h2>Las mejores conexiones generan nuevas posibilidades.</h2>
-        <a href="#unirme" class="btn-primary">Unirme a la Red</a>
-        <a href="ruta.html" class="btn-secondary">Agendar una conversación</a>
     </section>
 
     <footer><p>&copy; 2026 RedConecta. Todos los derechos reservados.</p></footer>
