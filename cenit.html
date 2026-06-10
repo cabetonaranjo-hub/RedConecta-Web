@@ -1,84 +1,186 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Modelo CÉNIT | RedConecta</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+
         :root {
+
             --azul-profundo: #002D62;
+
             --turquesa-suave: #008C95;
+
             --blanco-puro: #FFFFFF;
+
             --gris-fondo: #F4F7F9;
+
             --texto-principal: #334155;
+
+            --texto-secundario: #64748B;
+
         }
 
+
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--gris-fondo); color: var(--texto-principal); font-family: 'Montserrat', sans-serif; line-height: 1.8; }
 
-        /* HEADER */
-        header { background: var(--blanco-puro); padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
+        body { background-color: var(--gris-fondo); color: var(--texto-principal); font-family: 'Montserrat', sans-serif; line-height: 1.8; font-size: 16px; padding-top: 90px; }
+
+
+
+        /* HEADER UNIFICADO */
+
+        header { background: var(--blanco-puro); padding: 20px 10%; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
+
         nav { display: flex; gap: 30px; }
+
         nav a { color: var(--azul-profundo); font-size: 14px; font-weight: 600; text-decoration: none; }
-        .btn-cta { background: #D97706; color: white; padding: 10px 25px; border-radius: 5px; font-weight: 700; text-decoration: none; }
 
-        /* HERO DE IMPACTO */
-        .hero-cenit { background: var(--azul-profundo); color: white; padding: 80px 10%; text-align: center; }
-        .hero-cenit h1 { font-size: 48px; margin-bottom: 20px; }
-        .hero-cenit p { font-size: 1.2rem; font-style: italic; max-width: 800px; margin: 0 auto; color: #CBD5E1; }
+        .btn-cta { background: var(--azul-profundo); color: var(--blanco-puro); padding: 10px 25px; border-radius: 50px; font-size: 13px; font-weight: 700; text-decoration: none; }
 
-        /* SECCIONES MODULARES */
+
+
+        /* SECCIONES */
+
         section { padding: 80px 10%; max-width: 1100px; margin: 0 auto; }
-        h2 { color: var(--azul-profundo); margin-bottom: 30px; }
 
-        /* GRID DE 5 CONEXIONES */
-        .grid-5 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card-conexion { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
-        .card-conexion i { font-size: 30px; color: var(--turquesa-suave); margin-bottom: 15px; }
+        h1, h2 { color: var(--azul-profundo); font-weight: 800; margin-bottom: 20px; }
 
-        footer { background: #00142E; color: white; padding: 60px 10%; text-align: center; }
+        p { margin-bottom: 20px; color: var(--texto-secundario); }
+
+
+
+        /* HERO CENTRADO */
+
+        .hero { text-align: center; }
+
+        .hero p { color: var(--azul-profundo); font-weight: 600; font-size: 1.2rem; }
+
+
+
+        /* GRID Y CUADROS (Alineación izquierda) */
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+
+        .card { background: var(--blanco-puro); padding: 40px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; }
+
+        .card h3 { color: var(--azul-profundo); margin-bottom: 10px; font-size: 1.2rem; }
+
+
+
+        .btn-primary { background: var(--turquesa-suave); color: var(--blanco-puro); padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 20px; }
+
+       
+
+        footer { padding: 40px; text-align: center; color: var(--texto-secundario); font-size: 14px; border-top: 1px solid #E2E8F0; margin-top: 40px; }
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <header>
-        <img src="logo.png" style="height: 40px;">
+
+        <img src="logo.png" alt="Logo" style="height: 40px;">
+
         <nav>
+
             <a href="index.html">Inicio</a>
+
             <a href="nosotros.html">Nosotros</a>
+
             <a href="cenit.html" style="color: var(--turquesa-suave);">CÉNIT</a>
+
             <a href="lineas.html">Líneas</a>
+
             <a href="comunidad.html">Comunidad</a>
-            <a href="ruta.html" class="btn-cta">Diseñemos su Ruta</a>
+
         </nav>
+
+        <a href="ruta.html" class="btn-cta">Diseñemos su Ruta</a>
+
     </header>
 
-    <section class="hero-cenit">
-        <h1>Modelo CÉNIT</h1>
-        <p>"El resultado no es solo la transformación puntual, sino la capacidad de caminar con sentido, tomar decisiones conscientes y sostener el desarrollo en el tiempo."</p>
+
+
+    <section class="hero">
+
+        <h1>CÉNIT</h1>
+
+        <p>Modelo de gestión y transformación organizacional</p>
+
+        <p style="font-style: italic; color: var(--texto-principal); max-width: 700px; margin: 30px auto;">"El resultado no es solo la transformación puntual, sino la capacidad de caminar con sentido, tomar decisiones conscientes y sostener el desarrollo en el tiempo."</p>
+
+        <a href="lineas.html" class="btn-primary">Conocer líneas de fortalecimiento</a>
+
     </section>
+
+
 
     <section>
+
         <h2>¿Por qué nace CÉNIT?</h2>
+
         <p>Las organizaciones enfrentan desafíos complejos. CÉNIT nace para cerrar la brecha entre la estrategia y la ejecución, permitiendo construir rutas de transformación que sean, ante todo, coherentes y sostenibles.</p>
+
     </section>
 
-    <section style="background: white;">
+
+
+    <section style="background-color: #EBF5F6;">
+
         <h2>Las cinco conexiones CÉNIT</h2>
-        <div class="grid-5">
-            <div class="card-conexion"><i class="fa-solid fa-eye"></i><h3>Consciencia</h3></div>
-            <div class="card-conexion"><i class="fa-solid fa-heart"></i><h3>Esencia</h3></div>
-            <div class="card-conexion"><i class="fa-solid fa-seedling"></i><h3>Nacimiento</h3></div>
-            <div class="card-conexion"><i class="fa-solid fa-rocket"></i><h3>Inspiración</h3></div>
-            <div class="card-conexion"><i class="fa-solid fa-chart-line"></i><h3>Transformación</h3></div>
+
+        <div class="grid">
+
+            <article class="card"><h3>Consciencia</h3><p>Comprender la realidad de la organización con profundidad y sin sesgos.</p></article>
+
+            <article class="card"><h3>Esencia</h3><p>Reconectar con el propósito fundamental y los valores que guían la misión.</p></article>
+
+            <article class="card"><h3>Nacimiento</h3><p>Diseñar nuevas posibilidades de acción alineadas a la estrategia.</p></article>
+
+            <article class="card"><h3>Inspiración</h3><p>Movilizar el compromiso y la visión compartida de los equipos.</p></article>
+
+            <article class="card"><h3>Transformación</h3><p>Convertir las decisiones en resultados medibles y sostenibles.</p></article>
+
         </div>
+
     </section>
 
-    <footer style="margin-top:0;">
+
+
+    <section style="text-align: center;">
+
+        <h2>Nuestra convicción</h2>
+
+        <p>La verdadera transformación ocurre cuando las personas actúan con propósito de manera permanente.</p>
+
+        <a href="ruta.html" class="btn-primary">Agendar una conversación</a>
+
+    </section>
+
+
+
+    <footer>
+
         <p>&copy; 2026 RedConecta. Todos los derechos reservados.</p>
+
     </footer>
 
 </body>
-</html>
+
+</html> 
+
