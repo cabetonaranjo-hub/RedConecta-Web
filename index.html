@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedConecta | Liderazgo que Conecta</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --azul-profundo: #002D62;
@@ -12,76 +13,81 @@
             --blanco-puro: #FFFFFF;
             --gris-fondo: #F4F7F9;
             --texto-principal: #334155;
-            --texto-secundario: #64748B;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--gris-fondo); color: var(--texto-principal); font-family: 'Montserrat', sans-serif; line-height: 1.7; font-size: 16px; padding-top: 90px; }
+        body { font-family: 'Montserrat', sans-serif; line-height: 1.7; color: var(--texto-principal); }
 
-        header { background: var(--blanco-puro); padding: 20px 10%; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
-        nav { display: flex; gap: 30px; }
-        nav a { color: var(--azul-profundo); font-size: 14px; font-weight: 600; text-decoration: none; }
-        
-        .btn-cta { background: var(--azul-profundo); color: var(--blanco-puro); padding: 10px 25px; border-radius: 50px; font-size: 13px; font-weight: 700; text-decoration: none; }
+        /* HEADER */
+        header { background: var(--blanco-puro); padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
+        nav a { margin-left: 25px; font-weight: 600; font-size: 14px; text-decoration: none; color: var(--azul-profundo); }
+        .btn-cta { background: #D97706; color: white; padding: 10px 20px; border-radius: 5px; font-weight: 700; text-decoration: none; }
 
-        section { padding: 80px 10%; max-width: 1200px; margin: 0 auto; }
-        
-        /* Hero: Centrado por ser impacto principal */
-        .hero { text-align: center; }
-        h1 { color: var(--azul-profundo); font-size: 42px; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
-        .hero p { max-width: 700px; margin: 0 auto 30px auto; color: var(--texto-secundario); }
+        /* HERO DE IMPACTO */
+        .hero { 
+            background: linear-gradient(rgba(0,45,98,0.85), rgba(0,45,98,0.85)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center;
+            color: white; padding: 120px 10%;
+        }
+        .hero h1 { font-size: 48px; max-width: 700px; margin-bottom: 20px; }
+        .hero p { font-size: 20px; margin-bottom: 30px; opacity: 0.9; }
 
-        /* Grid: Alineación izquierda para legibilidad profesional */
-        .grid-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: var(--blanco-puro); padding: 40px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; }
-        .card h3 { color: var(--azul-profundo); margin-bottom: 15px; font-size: 20px; }
-        .card p { color: var(--texto-secundario); margin-bottom: 25px; }
+        /* MÉTRICAS (PRUEBA SOCIAL) */
+        .metricas { background: var(--azul-profundo); color: white; display: grid; grid-template-columns: repeat(4, 1fr); padding: 40px 10%; text-align: center; }
         
-        .btn-primary { background: var(--turquesa-suave); color: var(--blanco-puro); padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-block; }
-        
-        footer { padding: 40px; text-align: center; color: var(--texto-secundario); font-size: 14px; border-top: 1px solid #E2E8F0; margin-top: 40px; }
+        /* GRID DE LÍNEAS CON ICONOS */
+        .seccion { padding: 80px 10%; }
+        .grid-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .card { background: white; padding: 40px; border-radius: 15px; border-top: 4px solid var(--turquesa-suave); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .card i { font-size: 40px; color: var(--turquesa-suave); margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="logo.png" alt="Logo" style="height: 40px;">
+        <img src="logo.png" style="height: 40px;">
         <nav>
             <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
-            <a href="cenit.html">CÉNIT</a>
             <a href="lineas.html">Líneas</a>
             <a href="comunidad.html">Comunidad</a>
+            <a href="ruta.html" class="btn-cta">Contáctanos</a>
         </nav>
-        <a href="ruta.html" class="btn-cta">Diseñemos su Ruta</a>
     </header>
 
     <section class="hero">
-        <h1>Liderazgo que Conecta.<br>Redes que Transforman.</h1>
-        <p>Acompañamos instituciones educativas a fortalecer su propósito, optimizar procesos y conectar equipos para un crecimiento sostenible.</p>
-        <a href="lineas.html" class="btn-primary">Conocer nuestras líneas de acción</a>
+        <h1>Conectamos propósito, personas y procesos.</h1>
+        <p>Acompañamos instituciones educativas en la construcción de rutas de fortalecimiento.</p>
+        <a href="ruta.html" style="background:var(--turquesa-suave); color:white; padding:15px 30px; border-radius:5px; text-decoration:none; font-weight:700;">Diseñemos su Ruta</a>
     </section>
 
-    <section class="grid-home">
-        <article class="card">
-            <h3>Dirección Estratégica</h3>
-            <p>Claridad para decidir y coherencia para avanzar. Consolidamos la visión de futuro y orientamos la toma de decisiones.</p>
-            <a href="direccion.html" style="color: var(--turquesa-suave); font-weight: 600; text-decoration: none;">Ver detalle →</a>
-        </article>
-        <article class="card">
-            <h3>Desarrollo Organizacional</h3>
-            <p>Fortalecemos las capacidades humanas y culturales que hacen posible el cumplimiento del propósito institucional.</p>
-            <a href="desarrollo.html" style="color: var(--turquesa-suave); font-weight: 600; text-decoration: none;">Ver detalle →</a>
-        </article>
-        <article class="card">
-            <h3>Optimización Operativa</h3>
-            <p>Simplificamos procesos y automatizamos tareas para liberar tiempo y potenciar la gestión basada en datos.</p>
-            <a href="optimizacion.html" style="color: var(--turquesa-suave); font-weight: 600; text-decoration: none;">Ver detalle →</a>
-        </article>
+    <section class="metricas">
+        <div><h3>+50</h3><p>Organizaciones</p></div>
+        <div><h3>+15</h3><p>Encuentros</p></div>
+        <div><h3>+20</h3><p>Alianzas</p></div>
+        <div><h3>+10</h3><p>Proyectos</p></div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 RedConecta. Crecimiento sostenible a través de la conexión.</p>
-    </footer>
+    <section class="seccion">
+        <h2 style="text-align:center; margin-bottom: 50px;">Nuestras líneas de fortalecimiento</h2>
+        <div class="grid-home">
+            <article class="card">
+                <i class="fa-solid fa-compass"></i>
+                <h3>Dirección Estratégica</h3>
+                <p>Definir el rumbo y construir estrategias que orienten el crecimiento.</p>
+            </article>
+            <article class="card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Desarrollo Organizacional</h3>
+                <p>Fortalecer capacidades, talento y cultura para impulsar la transformación.</p>
+            </article>
+            <article class="card">
+                <i class="fa-solid fa-gear"></i>
+                <h3>Optimización Operativa</h3>
+                <p>Simplificar procesos y automatizar para tomar mejores decisiones.</p>
+            </article>
+        </div>
+    </section>
+
 </body>
 </html>
