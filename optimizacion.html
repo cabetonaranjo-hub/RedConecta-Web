@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimización Operativa | RedConecta</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --azul-profundo: #002D62;
@@ -18,22 +19,26 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: var(--gris-fondo); color: var(--texto-principal); font-family: 'Montserrat', sans-serif; line-height: 1.8; font-size: 16px; padding-top: 90px; }
 
-        /* HEADER */
         header { background: var(--blanco-puro); padding: 20px 10%; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
         nav { display: flex; gap: 30px; }
         nav a { color: var(--azul-profundo); font-size: 14px; font-weight: 600; text-decoration: none; }
         .btn-cta { background: var(--azul-profundo); color: var(--blanco-puro); padding: 10px 25px; border-radius: 50px; font-size: 13px; font-weight: 700; text-decoration: none; }
 
-        /* SECCIONES */
         section { padding: 60px 10%; max-width: 1100px; margin: 0 auto; }
         h1 { color: var(--azul-profundo); font-size: 36px; font-weight: 800; margin-bottom: 15px; }
         h2 { color: var(--azul-profundo); font-size: 24px; font-weight: 800; margin-bottom: 20px; }
         p { margin-bottom: 20px; color: var(--texto-secundario); }
 
+        /* EL DESAFÍO: ICONOS */
+        .grid-iconos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; }
+        .icono-item { text-align: center; padding: 20px; }
+        .icono-item i { font-size: 32px; color: var(--turquesa-suave); margin-bottom: 15px; }
+        .icono-item p { font-weight: 600; color: var(--azul-profundo); font-size: 14px; }
+
         /* TARJETAS PREMIUM */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        .card { background: var(--blanco-puro); padding: 40px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .card h3 { color: var(--azul-profundo); font-size: 20px; margin-bottom: 15px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .card { background: var(--blanco-puro); padding: 35px; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .card h3 { color: var(--azul-profundo); font-size: 18px; margin-bottom: 15px; }
         .check-list { list-style: none; margin: 15px 0; font-size: 14px; }
         .check-list li::before { content: '✔ '; color: var(--turquesa-suave); font-weight: bold; }
 
@@ -60,23 +65,23 @@
     <section>
         <h1>Optimización Operativa</h1>
         <p style="font-size: 1.2rem; color: var(--turquesa-suave); font-weight: 600;">Liberar tiempo para lo que realmente genera valor.</p>
-        <p>Acompañamos procesos de simplificación y fortalecimiento de la gestión, mediante soluciones prácticas que aumentan la eficiencia y facilitan la toma de decisiones.</p>
+        <p>Acompañamos procesos de simplificación y fortalecimiento de la gestión, mediante soluciones prácticas que aumentan la eficiencia.</p>
         <div>
             <a href="ruta.html" class="btn-primary">Agendar conversación</a>
             <a href="contacto.html" class="btn-secondary">Solicitar información</a>
         </div>
     </section>
 
-    <section style="background-color: #EBF5F6;">
-        <h2>El desafío: Cuando la operación consume la capacidad de crecer</h2>
-        <p>La sobrecarga operativa suele ser un obstáculo para el desarrollo. Procesos manuales, tareas repetitivas y sistemas dispersos generan desgaste en los equipos.</p>
-        <div class="grid-3">
-            <div class="card">✔ Procesos manuales excesivos</div>
-            <div class="card">✔ Tareas repetitivas</div>
-            <div class="card">✔ Información dispersa</div>
-            <div class="card">✔ Poca trazabilidad</div>
-            <div class="card">✔ Duplicidad de esfuerzos</div>
-            <div class="card">✔ Decisiones con información incompleta</div>
+    <section style="background-color: var(--blanco-puro);">
+        <h2>El desafío: Cuando la operación consume el crecimiento</h2>
+        <p style="text-align: center;">La sobrecarga operativa es un obstáculo clave. Genera desgaste y reduce la agilidad.</p>
+        <div class="grid-iconos">
+            <div class="icono-item"><i class="fa-solid fa-file-lines"></i><p>Procesos manuales excesivos</p></div>
+            <div class="icono-item"><i class="fa-solid fa-rotate-right"></i><p>Tareas repetitivas</p></div>
+            <div class="icono-item"><i class="fa-solid fa-sitemap"></i><p>Información dispersa</p></div>
+            <div class="icono-item"><i class="fa-solid fa-magnifying-glass"></i><p>Poca trazabilidad</p></div>
+            <div class="icono-item"><i class="fa-solid fa-layer-group"></i><p>Duplicidad de esfuerzos</p></div>
+            <div class="icono-item"><i class="fa-solid fa-circle-exclamation"></i><p>Datos incompletos</p></div>
         </div>
     </section>
 
@@ -85,17 +90,17 @@
         <div class="grid-3">
             <article class="card">
                 <h3>Optimización de Procesos</h3>
-                <p>Simplificar para avanzar. Eliminamos actividades innecesarias.</p>
+                <p style="font-size: 14px;">Simplificar para avanzar. Eliminamos actividades innecesarias.</p>
                 <ul class="check-list"><li>Gestión de procesos</li><li>Eficiencia operativa</li><li>Estandarización</li></ul>
             </article>
             <article class="card">
                 <h3>Automatización Inteligente</h3>
-                <p>Menos tareas repetitivas. Más tiempo para liderar.</p>
+                <p style="font-size: 14px;">Menos tareas repetitivas. Más tiempo para liderar.</p>
                 <ul class="check-list"><li>Automatización de procesos</li><li>Gestión documental</li><li>Productividad</li></ul>
             </article>
             <article class="card">
                 <h3>Información Estratégica</h3>
-                <p>Convertir datos en decisiones con tableros de control.</p>
+                <p style="font-size: 14px;">Convertir datos en decisiones con tableros de control.</p>
                 <ul class="check-list"><li>Indicadores de gestión</li><li>Análisis de información</li><li>Cultura de datos</li></ul>
             </article>
         </div>
@@ -109,9 +114,9 @@
     <section>
         <h2>Resultados buscados</h2>
         <div class="grid-3">
-            <div class="card"><h3>Eficiencia</h3><p>Procesos optimizados y equipos enfocados.</p></div>
-            <div class="card"><h3>Claridad</h3><p>Información confiable para decidir.</p></div>
-            <div class="card"><h3>Innovación</h3><p>Condiciones para el crecimiento.</p></div>
+            <div class="card" style="text-align: center;"><h3>Eficiencia</h3><p style="font-size: 14px;">Procesos optimizados y equipos enfocados.</p></div>
+            <div class="card" style="text-align: center;"><h3>Claridad</h3><p style="font-size: 14px;">Información confiable para decidir.</p></div>
+            <div class="card" style="text-align: center;"><h3>Innovación</h3><p style="font-size: 14px;">Condiciones para el crecimiento.</p></div>
         </div>
     </section>
 
